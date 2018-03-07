@@ -1,4 +1,4 @@
-package com.sports.Player;
+package com.sports.Player.Controller;
 
 import com.sports.Player.Model.Player;
 import com.sports.Player.Service.PlayerService;
@@ -78,3 +78,4 @@ public class PlayerController {
 
 
 }
+
