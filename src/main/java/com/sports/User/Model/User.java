@@ -3,10 +3,7 @@ package com.sports.User.Model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Pattern;
 
@@ -14,6 +11,7 @@ import javax.validation.constraints.Pattern;
 @Data
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
     private String Name;
     private String Surname;
