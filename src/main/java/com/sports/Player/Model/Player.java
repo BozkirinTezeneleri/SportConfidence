@@ -17,7 +17,7 @@ import java.util.Date;
 @Data
 public class Player {
     @Id
-    private Integer PlayerId;
+    private int PlayerId;
     private String Name;
     private String Surname;
     @NotNull(message="Please enter a date")
