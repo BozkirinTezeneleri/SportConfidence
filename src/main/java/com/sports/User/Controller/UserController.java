@@ -16,13 +16,13 @@ import java.util.Optional;
  * @author eray
  */
 @Controller
-@RequestMapping("user")
+@RequestMapping("/users")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @GetMapping("users")
+    @GetMapping("")
     public String getUserList(Model model){
         List<User> optionalUser = userService.findAllUsers();
         model.addAttribute("users",optionalUser);
@@ -43,7 +43,7 @@ public class UserController {
 
     }
 
-    @DeleteMapping(value = "/{id}/delete")
+    @GetMapping(value = "/{id}/delete")
     public String getDeleteById(@PathVariable("id") Integer id){
         Optional <User> userOptional = userService.getUserById(id);
         if(!userOptional.isPresent()){
@@ -67,7 +67,7 @@ public class UserController {
         }
     }
 
-    @PutMapping(value = "/{id}/update")
+    @PostMapping(value = "/{id}/update")
     public String putUpdateById(@Valid @ModelAttribute  User user, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "user/updateUser";
