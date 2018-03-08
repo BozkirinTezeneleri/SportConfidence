@@ -3,6 +3,7 @@ package com.sports.User.Service;
 import com.sports.User.Model.User;
 import com.sports.User.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessResourceFailureException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,13 +30,19 @@ public class UserService implements UserServiceImpl{
 
     @Override
     public void updateUser(Integer id, User user) {
-        Optional<User> userTempObject = userRepository.findById(id);
+        User userTempObject = userRepository.findById(id).orElseThrow(()->new DataAccessResourceFailureException("Data is not available"));
         if(userTempObject == null) {
             throw new RuntimeException();
         }
         else {
-            userRepository.deleteById(id);
-            userRepository.save(user);
+            userTempObject.setUserId(id);
+            userTempObject.setName(user.getName());
+            userTempObject.setEmail(user.getEmail());
+            userTempObject.setPassword(user.getPassword());
+            userTempObject.setPhone(user.getPhone());
+            userTempObject.setRole(user.getRole());
+            userTempObject.setSurname(user.getSurname());
+            userRepository.save(userTempObject);
         }
     }
 

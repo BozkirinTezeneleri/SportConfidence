@@ -12,12 +12,12 @@ import javax.validation.constraints.Pattern;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int userId;
+    private Integer userId;
     private String Name;
     private String Surname;
     private String Password;
     @Email(message = "Invalid email address!!")
-    private String userEmail;
+    private String Email;
     @Pattern(regexp="(^$|[0-9]{10})")
     private String Phone;
     @Enumerated(EnumType.STRING)
