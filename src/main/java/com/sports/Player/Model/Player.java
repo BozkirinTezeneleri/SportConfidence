@@ -1,13 +1,14 @@
 package com.sports.Player.Model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Date;
 
 /**
@@ -17,25 +18,23 @@ import java.util.Date;
 @Data
 public class Player {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int PlayerId;
     private String Name;
     private String Surname;
     @NotNull(message="Please enter a date")
-    @Past(message="Only the past is valid")
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private Date BirthDate;
-    @Size(max = 250,min = 135)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date birthDate;
+    @Max(210)
     private float Height;
-    @Size(max = 200,min = 50)
+    @Max(210)
     private float Weight;
     @NotNull(message="Please enter a date")
-    @Past(message="Only the past is valid")
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private Date ContractTimeEnd;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date contractTimeEnd;
     @NotNull(message="Please enter a date")
-    @Past(message="Only the past is valid")
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private Date ContractTimeStart;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date contractTimeStart;
     private Integer CitizenShipId;
     private Integer TeamId;
     private String DisabilityInformation;
