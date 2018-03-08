@@ -42,7 +42,11 @@ public class UserRestController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
+<<<<<<< HEAD
     public void updateUserById(@PathVariable Integer id, @RequestBody User user){
+=======
+    public void updateUserById(@PathVariable Integer id,@Valid @RequestBody User user){
+>>>>>>> 2f426eb55c7fcf27d7f1341c076c5e2a13bfcab6
         userService.updateUser(id,user);
     }
 
