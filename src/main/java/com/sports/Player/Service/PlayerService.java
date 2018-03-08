@@ -3,6 +3,7 @@ package com.sports.Player.Service;
 import com.sports.Player.Model.Player;
 import com.sports.Player.Repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessResourceFailureException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,13 +30,25 @@ public class PlayerService implements PlayerServiceImpl {
 
     @Override
     public void updatePlayer(Integer id, Player player) {
-        Optional<Player> playerTempObject = playerRepository.findById(id);
+        Player playerTempObject = playerRepository.findById(id).orElseThrow(()->new DataAccessResourceFailureException("Data is not available"));
         if(playerTempObject == null) {
             throw new RuntimeException();
         }
         else {
-            playerRepository.deleteById(id);
-            playerRepository.save(player);
+            playerTempObject.setPlayerId(id);
+            playerTempObject.setName(player.getName());
+            playerTempObject.setBirthDate(player.getBirthDate());
+            playerTempObject.setHeight(player.getHeight());
+            playerTempObject.setWeight(player.getWeight());
+            playerTempObject.setContractTimeStart(player.getContractTimeStart());
+            playerTempObject.setTeamId(player.getTeamId());
+            playerTempObject.setDisabilityInformation(player.getDisabilityInformation());
+            playerTempObject.setTestimonial(player.getTestimonial());
+            playerTempObject.setCitizenShipId(player.getCitizenShipId());
+            playerTempObject.setContractTimeEnd(player.getContractTimeEnd());
+            playerTempObject.setDisabilityState(player.isDisabilityState());
+            playerTempObject.setSurname(player.getSurname());
+            playerRepository.save(playerTempObject);
         }
     }
 

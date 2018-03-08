@@ -38,7 +38,6 @@ public class Player {
     private Date ContractTimeStart;
     private Integer CitizenShipId;
     private Integer TeamId;
-    @NotNull(message="Please enter a info")
     private String DisabilityInformation;
     @NotNull(message="Please enter a info")
     private boolean DisabilityState;
