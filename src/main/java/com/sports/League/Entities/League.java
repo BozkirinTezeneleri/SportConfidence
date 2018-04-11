@@ -1,9 +1,12 @@
 package com.sports.League.Entities;
 
+import com.sports.Country.Entities.Country;
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -13,8 +16,8 @@ import javax.validation.constraints.NotNull;
 @Data
 public class League {
     @Id
-    private int LeagueId;
-    @NotNull
-    private String CountryName;
-    private int CountryId;
+    private int leagueId;
+    private String leagueName;
+    @ManyToOne
+    private Country country;
 }

@@ -1,13 +1,10 @@
 package com.sports.Player.Model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.sports.Country.Entities.Country;
+import com.sports.SportClub.Entities.SportClub;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.Date;
 
@@ -19,26 +16,28 @@ import java.util.Date;
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int PlayerId;
-    private String Name;
-    private String Surname;
+    private int playerId;
+    private String name;
+    private String surname;
     @NotNull(message="Please enter a date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private Date birthDate;
+    private Date BirthDate;
     @Max(210)
     private float Height;
     @Max(210)
-    private float Weight;
+    private float weight;
     @NotNull(message="Please enter a date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date contractTimeEnd;
     @NotNull(message="Please enter a date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date contractTimeStart;
-    private Integer CitizenShipId;
-    private Integer TeamId;
-    private String DisabilityInformation;
+    @ManyToOne
+    private Country country;
+    @ManyToOne
+    private SportClub sportClub;
+    private String disabilityInformation;
     @NotNull(message="Please enter a info")
-    private boolean DisabilityState;
-    private float Testimonial;
+    private boolean disabilityState;
+    private float testimonial;
 }
