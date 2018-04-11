@@ -1,9 +1,11 @@
 package com.sports.SportClub.Entities;
 
+import com.sports.League.Entities.League;
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * Created by sahin on 07.03.2018.
@@ -12,8 +14,9 @@ import javax.persistence.Id;
 @Data
 public class SportClub {
     @Id
-    private int SporClubId;
-    private String Name;
-    private int LeagueId;
-    private String Insignie;
+    private int sportClubId;
+    private String name;
+    @ManyToOne
+    private League league;
+    private String insignie;
 }

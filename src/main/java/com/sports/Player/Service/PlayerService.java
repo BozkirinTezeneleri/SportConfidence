@@ -41,10 +41,10 @@ public class PlayerService implements PlayerServiceImpl {
             playerTempObject.setHeight(player.getHeight());
             playerTempObject.setWeight(player.getWeight());
             playerTempObject.setContractTimeStart(player.getContractTimeStart());
-            playerTempObject.setTeamId(player.getTeamId());
+            playerTempObject.setSportClub(player.getSportClub());
             playerTempObject.setDisabilityInformation(player.getDisabilityInformation());
             playerTempObject.setTestimonial(player.getTestimonial());
-            playerTempObject.setCitizenShipId(player.getCitizenShipId());
+            playerTempObject.setCountry(player.getCountry());
             playerTempObject.setContractTimeEnd(player.getContractTimeEnd());
             playerTempObject.setDisabilityState(player.isDisabilityState());
             playerTempObject.setSurname(player.getSurname());

@@ -18,10 +18,9 @@ import javax.validation.constraints.NotNull;
 @Data
 public class Country {
     @Id
-
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int CountryId;
+    private int countryId;
     private int id;
     @NotNull
-    private String CountryName;
+    private String countryName;
 }
