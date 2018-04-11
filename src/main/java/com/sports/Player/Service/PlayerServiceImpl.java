@@ -15,4 +15,5 @@ public interface PlayerServiceImpl {
     public void updatePlayer(Integer id, Player player);
     public Optional<Player> getPlayerById(Integer id);
     public List<Player> findAllPlayers();
+    public List<Player> findByCountry(Integer id);
 }

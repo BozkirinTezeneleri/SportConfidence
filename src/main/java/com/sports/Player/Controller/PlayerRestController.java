@@ -51,5 +51,9 @@ public class PlayerRestController {
         playerService.deletePlayer(id);
     }
 
-
+    @GetMapping("/country/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Player> findPlayerCountry(@PathVariable Integer id){
+        return playerService.findByCountry(id);
+    }
 }
