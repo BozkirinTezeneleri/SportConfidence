@@ -13,13 +13,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer userId;
-    private String Name;
-    private String Surname;
-    private String Password;
+    private String name;
+    private String surname;
+    private String password;
     @Email(message = "Invalid email address!!")
-    private String Email;
+    private String email;
     @Pattern(regexp="(^$|[0-9]{10})")
-    private String Phone;
+    private String phone;
     @Enumerated(EnumType.STRING)
     private Role role;
 }
