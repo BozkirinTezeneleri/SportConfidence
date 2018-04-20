@@ -10,10 +10,10 @@ import java.util.Optional;
  */
 
 public interface UserServiceImpl {
-
     public void addUser(User user);
     public void deleteUser(Integer id);
     public void updateUser(Integer id, User user);
     public Optional<User> getUserById(Integer id);
     public List<User> findAllUsers();
+    public Optional<User> getUserByName(String username);
 }

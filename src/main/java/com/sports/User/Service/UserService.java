@@ -4,6 +4,10 @@ import com.sports.User.Model.User;
 import com.sports.User.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessResourceFailureException;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,14 +17,19 @@ import java.util.Optional;
  * Created by sahin on 07.03.2018.
  */
 @Service
-public class UserService implements UserServiceImpl{
+public class UserService implements UserServiceImpl,UserDetailsService{
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     UserRepository userRepository;
 
     @Override
     public void addUser(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
+
     }
 
     @Override
@@ -36,7 +45,7 @@ public class UserService implements UserServiceImpl{
         }
         else {
             userTempObject.setUserId(id);
-            userTempObject.setName(user.getName());
+            userTempObject.setUsername(user.getUsername());
             userTempObject.setEmail(user.getEmail());
             userTempObject.setPassword(user.getPassword());
             userTempObject.setPhone(user.getPhone());
@@ -54,5 +63,24 @@ public class UserService implements UserServiceImpl{
     @Override
     public List<User> findAllUsers() {
         return (List<User>) userRepository.findAll();
+    }
+
+    @Override
+    public Optional<User> getUserByName(String name) {
+        return userRepository.findByUsername(name);
+    }
+
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Optional<User> userOptional = userRepository.findByUsername(username);
+
+        if (!userOptional.isPresent()) {
+            return null;
+        }
+
+        else {
+            return userOptional.get();
+        }
     }
 }
