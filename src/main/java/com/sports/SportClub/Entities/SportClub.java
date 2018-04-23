@@ -18,5 +18,5 @@ public class SportClub {
     private String name;
     @ManyToOne
     private League league;
-    private String insignie;
+    private String insignia;
 }

@@ -50,15 +50,14 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
 
     }
-/*
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-         auth.inMemoryAuthentication().withUser("eray").password(passwordEncoder.encode("eray")).roles("ADMIN");
-    }
-*/
+//    @Autowired
+//    private PasswordEncoder passwordEncoder;
+//
+//    @Autowired
+//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//         auth.inMemoryAuthentication().withUser("eray").password(passwordEncoder.encode("eray")).roles("ADMIN");
+//    }
 
 }
 

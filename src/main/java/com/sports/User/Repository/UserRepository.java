@@ -17,5 +17,5 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
-    public Optional<User> findByUsername(@PathVariable String name);
+     Optional<User> findByUsername(@PathVariable String name);
 }

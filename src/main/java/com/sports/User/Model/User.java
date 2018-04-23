@@ -29,11 +29,12 @@ public class User implements UserDetails {
     private Integer userId;
     @Column(unique = true)
     private String username;
+    private String name;
     private String surname;
     private String password;
     @Email(message = "Invalid email address!!")
     private String email;
-    @Pattern(regexp="(^$|[0-9]{10})")
+    @Pattern(regexp="(^$|[0-9]{11})")
     private String phone;
     private String role;
     private boolean isEnabled=true;

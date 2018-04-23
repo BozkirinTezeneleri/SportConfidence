@@ -20,7 +20,6 @@ public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int countryId;
-    private int id;
     @NotNull
     private String countryName;
 }

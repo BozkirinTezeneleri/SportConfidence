@@ -20,17 +20,17 @@ public class Player {
     private String name;
     private String surname;
     @NotNull(message="Please enter a date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private Date BirthDate;
+    @JsonFormat(shape = JsonFormat.Shape.ANY, pattern = "yyyy-MM-dd")
+    private Date birthDate;
     @Max(210)
     private float Height;
     @Max(210)
     private float weight;
     @NotNull(message="Please enter a date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.ANY, pattern = "yyyy-MM-dd")
     private Date contractTimeEnd;
     @NotNull(message="Please enter a date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.ANY, pattern = "yyyy-MM-dd")
     private Date contractTimeStart;
     @ManyToOne
     private Country country;
