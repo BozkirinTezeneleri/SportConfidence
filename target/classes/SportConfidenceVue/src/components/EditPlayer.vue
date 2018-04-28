@@ -14,27 +14,31 @@
       </div>
       <div>
         <label for="birthDate">BirthDate :</label>
-        <input type="text" id="birthDate" v-model="editPlayer.birthDate">
+        <input type="date" id="birthDate" v-model="editPlayer.birthDate" placeholder="DD-MM-YYYY">
       </div>
 
       <div>
         <label for="weight">Weight :</label>
-        <input type="text" id="weight" v-model="editPlayer.weight" placeholder="example : 73.0">
+        <input type="range" step="0.1" min="40" max="120" id="weight" v-model="editPlayer.weight" placeholder="73.0">
+        <input type="text" id="weight" v-model="editPlayer.weight" placeholder="73.0" style="width:5%;">
+        <label for="weight">kg.</label>
       </div>
 
       <div>
         <label for="height">Height :</label>
-        <input type="text" id="height" v-model="editPlayer.height" placeholder="example : 180.0">
+        <input type="range" step="0.1" min="100" max="210" id="height" v-model="editPlayer.height" placeholder="180.0">
+        <input type="text" id="height" v-model="editPlayer.height" placeholder="180.0" style="width:5%;">
+        <label for="height">cm.</label>
       </div>
 
       <div>
         <label for="contractTimeStart">Contract Time Start :</label>
-        <input type="text" id="contractTimeStart" v-model="editPlayer.contractTimeStart">
+        <input type="date" id="contractTimeStart" v-model="editPlayer.contractTimeStart" placeholder="DD-MM-YYYY">
       </div>
 
       <div>
         <label for="contractTimeEnd">Contract Time End :</label>
-        <input type="text" id="contractTimeEnd" v-model="editPlayer.contractTimeEnd">
+        <input type="date" id="contractTimeEnd" v-model="editPlayer.contractTimeEnd" placeholder="DD-MM-YYYY">
       </div>
 
       <div>
@@ -58,6 +62,7 @@
       <div>
         <label for="testimonial">Testimonial :</label>
         <input type="text" id="testimonial" v-model="editPlayer.testimonial" placeholder="example : 150.0">
+        <label for="testimonial">$</label>
       </div>
       <hr>
       <h2>TEAM INFORMATION</h2>

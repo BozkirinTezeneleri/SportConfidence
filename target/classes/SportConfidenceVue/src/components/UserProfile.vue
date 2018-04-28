@@ -6,7 +6,7 @@
     <h2><b>{{userData.userId}} -</b> {{userData.name}} {{userData.surname}}</h2>
     <ul>
 
-
+      <li><b>Username :</b> {{userData.username}}</li>
       <li><b>Role :</b> {{userData.role}}</li>
       <li><b>Phone Number :</b> {{userData.phone}}</li>
 

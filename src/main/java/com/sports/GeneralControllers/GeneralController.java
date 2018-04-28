@@ -44,4 +44,10 @@ public class GeneralController {
         return sportClubService.getSportClubs();
     }
 
+    @GetMapping("/leagues/country/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<League> findLeagueByCountryId(@PathVariable Integer id){
+        return leagueService.findByLeague(id);
+    }
+
 }

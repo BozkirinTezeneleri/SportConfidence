@@ -15,4 +15,5 @@ import java.util.List;
 public interface PlayerRepository extends JpaRepository<Player,Integer>{
 
     List<Player> findPlayersByCountry_CountryId(Integer id);
+    List<Player> findPlayersBySportClub_SportClubId(Integer id);
 }

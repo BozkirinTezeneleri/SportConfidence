@@ -16,4 +16,5 @@ public interface PlayerServiceImpl {
     public Optional<Player> getPlayerById(Integer id);
     public List<Player> findAllPlayers();
     public List<Player> findByCountry(Integer id);
+    public List<Player> findBySportClub(Integer id);
 }

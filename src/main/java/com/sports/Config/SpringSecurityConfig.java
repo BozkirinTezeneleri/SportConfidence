@@ -23,12 +23,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserService userService;
-
+/*
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userService).passwordEncoder(getPasswordEncoder());
     }
-
+*/
     @Bean
     protected PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder();
@@ -51,13 +51,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
-//
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//         auth.inMemoryAuthentication().withUser("eray").password(passwordEncoder.encode("eray")).roles("ADMIN");
-//    }
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+         auth.inMemoryAuthentication().withUser("eray").password(passwordEncoder.encode("eray")).roles("ADMIN");
+    }
 
 }
 

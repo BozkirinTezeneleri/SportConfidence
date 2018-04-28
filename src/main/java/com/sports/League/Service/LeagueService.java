@@ -19,4 +19,8 @@ public class LeagueService {
     public List<League> getLeagues() {
         return leagueRepo.findAll();
     }
+
+    public List<League> findByLeague(Integer id) {
+        return leagueRepo.findLeaguesByCountry_CountryId(id);
+    }
 }

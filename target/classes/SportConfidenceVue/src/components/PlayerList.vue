@@ -1,9 +1,9 @@
 <template>
 
-  <div>
-  <template v-for="player in players">
-    <player-item :player=player></player-item>
-  </template>
+  <div class="row text-center" id="heading">
+    <template v-for="player in players">
+      <player-item :player=player></player-item>
+    </template>
   </div>
 </template>
 

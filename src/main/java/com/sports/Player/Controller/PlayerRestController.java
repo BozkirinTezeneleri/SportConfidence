@@ -56,4 +56,10 @@ public class PlayerRestController {
     public List<Player> findPlayerCountry(@PathVariable Integer id){
         return playerService.findByCountry(id);
     }
+
+    @GetMapping("/sportclub/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Player> findPlayerSportClub(@PathVariable Integer id){
+        return playerService.findBySportClub(id);
+    }
 }

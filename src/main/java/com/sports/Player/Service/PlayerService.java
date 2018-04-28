@@ -66,4 +66,9 @@ public class PlayerService implements PlayerServiceImpl {
     public List<Player> findByCountry(Integer id) {
         return playerRepository.findPlayersByCountry_CountryId(id);
     }
+
+    @Override
+    public List<Player> findBySportClub(Integer id) {
+        return playerRepository.findPlayersBySportClub_SportClubId(id);
+    }
 }

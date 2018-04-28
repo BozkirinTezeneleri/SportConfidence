@@ -1,58 +1,81 @@
 <template>
 
-  <div>
-    <h2>NEW USER INFORMATION</h2>
-    <hr>
-    <form v-if="!submitData" v-on:submit.prevent="addUser" id="UserAdd" method="post">
-      <div>
-        <label for="name">Name :</label>
-        <input type="text" id="name" v-model="newUser.name">
-      </div>
-
-      <div>
-        <label for="surname">Surname :</label>
-        <input type="text" id="surname" v-model="newUser.surname">
-      </div>
-
-      <div>
-        <label for="email">Email :</label>
-        <input type="email" id="email" v-model="newUser.email" placeholder="example@example.com">
-      </div>
-
-      <div>
-        <label for="password">Password :</label>
-        <input type="password" id="password" v-model="newUser.password" placeholder="Please enter min 6 chracter..." minlength="6">
-      </div>
-
-      <div>
-        <label for="phone">Phone Number :</label>
-        <input type="text" id="phone" v-model="newUser.phone" placeholder="Please, enter 10 character..." minlength="10" maxlength="10">
-      </div>
-
-      <div>
-        <label for="role">Role :</label>
-        <select class="" id="role" v-model="newUser.role">
-          <option>ADMIN</option>
-          <option>DOCTOR</option>
-          <option>MANAGER</option>
-        </select>
-      </div>
-
-      <hr>
-      <p v-if="submitData">{{submitData}}</p>
-      <hr>
-
-      <button type="submit">SAVE</button>
-      <hr>
-
-    </form>
-    <div v-if="submitInfo">
-      <center>
-        <b><p>{{submitInfo}}</p></b>
-        <button @click="goBack">Go Back to User List</button>
-      </center>
+  <div class="row main_content">
+    <div v-if="submitInfo" class="alert alert-success">
+        <strong>Succesful Record!</strong> {{submitInfo}}
     </div>
-  </div>
+
+    <div class= "row text-center main_content">
+      <h3>NEW USER INFORMATION</h3>
+      <hr>
+      <div class= "col-md-6 col-md-offset-3 text-center">
+
+        <form v-on:submit.prevent="addUser" id="UserAdd" method="post" action="#">
+          <div class= "form">
+            <div class="input-group margin-bottom-sm">
+                <span class="input-group-addon">
+                  <i class="fa fa-user fa-fw"></i>
+                </span>
+              <input class="form-control" type="text" id="username" v-model="newUser.username" placeholder="Username" required>
+            </div>
+
+            <div class="input-group margin-bottom-sm">
+                <span class="input-group-addon">
+                  <i class="fa fa-user fa-fw"></i>
+                </span>
+              <input class="form-control" type="text" id="name" v-model="newUser.name" placeholder="Name" required>
+            </div>
+
+            <div class="input-group margin-bottom-sm">
+                <span class="input-group-addon">
+                  <i class="fa fa-user fa-fw"></i>
+                </span>
+              <input class="form-control" type="text" id="surname" v-model="newUser.surname" placeholder="Surname" required>
+            </div>
+
+            <div class="input-group margin-bottom-sm">
+                <span class="input-group-addon">
+                  <i class="fa fa-envelope-o fa-fw"></i>
+                </span>
+              <input class="form-control" type="email" id="email" v-model="newUser.email" placeholder="Email address(example@example.com)" required>
+            </div>
+
+            <div class="input-group margin-bottom-sm">
+                <span class="input-group-addon">
+                  <i class="fa fa-user fa-fw"></i>
+                </span>
+              <input class="form-control" type="password" id="password" v-model="newUser.password" placeholder="Enter Password(Please enter min 6 chracter...)" minlength="6" required>
+            </div>
+
+            <div class="input-group margin-bottom-sm">
+                <span class="input-group-addon">
+                  <i class="fa fa-user fa-fw"></i>
+                </span>
+              <input class="form-control" type="text" id="phone" v-model="newUser.phone" placeholder="Phone Number(Please, enter 11 character...)" minlength="11" maxlength="11" required>
+            </div>
+
+            <div class="input-group margin-bottom-sm">
+                <span class="input-group-addon">
+                  <i class="fa fa-tags fa-fw"></i>
+                </span>
+              <select class="form-control" id="role" v-model="newUser.role">
+                <option>ADMIN</option>
+                <option>DOCTOR</option>
+                <option>MANAGER</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary send" type="submit">ADD NEW USER</button>
+        </form>
+
+      </div>
+    </div>
+    <hr>
+
+  </div> <!-- row main_content -->
+
+
 </template>
 
 <script>
@@ -63,6 +86,7 @@ export default {
   data(){
     return{
       newUser:{
+        username:null,
         name:null,
         surname:null,
         email:null,
@@ -82,12 +106,8 @@ export default {
       console.log("RUNNING INFORMATION : UserAdd is running...")
     },
 
-    goBack(){
-
-        this.$router.push({ name : 'userList' })//syfa yonlendirme
-
-    },
     addUser(){
+
       this.submitData = JSON.stringify(this.newUser);
       console.log("RUNNING INFORMATION : AddUser running...");
 
@@ -108,6 +128,7 @@ export default {
           if(res.status==201){
             console.log("INFO : " + url + "- SUCCESSFUL POST Operation for USER...")
 
+            this.newUser.username=null
             this.newUser.name=null
             this.newUser.surname=null
             this.newUser.email=null
@@ -115,6 +136,9 @@ export default {
             this.newUser.phone=null
             this.newUser.role=null
             this.submitInfo='...Succesful Record Operation for New User...'
+
+            //alert(this.submitInfo);
+
           }
 
       })
@@ -122,23 +146,6 @@ export default {
 
       //////// END-FETCH-POST/////////////////////
 
-      ///////////////////// START- VueRouter-POST //////////
-
-      /*this.$http.post(url, this.submitData).then(function(resp) {
-
-          console.log(resp.status);
-          //console.log(resp.data);
-
-         if (resp.status == 201) {
-
-         console.log("INFO : " + url + "- SUCCESSFUL POST Operation for USER...")
-
-         }
-       },function(resp){
-          console.log("INFO : HATAAAAAAAAAAAAAAAAA");
-
-       });*/
-       //////////////////// END-VueRouter-POST/////////////
     }
   }
 }
