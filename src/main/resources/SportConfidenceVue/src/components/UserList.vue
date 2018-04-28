@@ -22,6 +22,7 @@ export default {
   methods:{
 
     getUser(){
+
       console.log("RUNNING INFORMATION : GetUser is running for All Users...");
 
       var url = 'http://localhost:8080/users';
