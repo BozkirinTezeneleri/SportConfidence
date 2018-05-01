@@ -1,10 +1,25 @@
 <template>
 
-  <div class="row text-center" id="heading">
-    <template v-for="player in players">
-      <player-item :player=player></player-item>
-    </template>
-  </div>
+  <div class="container">
+    <div class="row text-center" id="heading">
+      <div class="col-md-6 col-md-offset-3 wow animated zoomInDown" id="heading-text">
+          <h3>Players</h3>
+              <p>Player List</p>
+              <hr class="full">
+              <br/>
+        </div>
+    </div>	<!-- row -->
+    <div class="row main_content">
+        <div class="row text-center" id="heading">
+          <template v-for="player in players">
+            <player-item :player=player></player-item>
+          </template>
+        </div>
+    </div>	<!-- row main_content -->
+
+  </div>	<!-- container -->
+
+
 </template>
 
 <script>

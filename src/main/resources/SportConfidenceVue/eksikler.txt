@@ -1,2 +1,3 @@
 -Player ve user için resim eklenecek
--Country, league, sportClub sorguları için path ler ayarlanacak
+-player kulüpsüz olduğunda contractTimeEnd ve contractTimeStart null olmalı...stringe cevrilebilir
+-Player pozisyon(mevki) bilgisi eklenecek

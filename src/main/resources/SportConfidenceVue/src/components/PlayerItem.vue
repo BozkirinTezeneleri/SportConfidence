@@ -12,6 +12,7 @@
       </router-link>
     </h4>
     <p class= "member-title wow animated fadeIn" data-wow-delay= "0.3s">{{player.sportClub.name}}</p>
+    <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s"><b>Position : </b>{{player.position}}</p>
     <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s"><b>Citizenship : </b>{{player.country.countryName}}</p>
     <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s"><b>Disability State : </b>{{player.disabilityState}}</p>
     <div class= "row text-center wow animated fadeInDown" data-wow-delay= "0.5s">

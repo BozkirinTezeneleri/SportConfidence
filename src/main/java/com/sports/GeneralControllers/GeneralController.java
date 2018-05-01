@@ -50,4 +50,10 @@ public class GeneralController {
         return leagueService.findByLeague(id);
     }
 
+    @GetMapping("/sportclubs/league/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<SportClub> findSportClubByLeagueId(@PathVariable Integer id){
+        return sportClubService.findSportClubByLeagueId(id);
+    }
+
 }

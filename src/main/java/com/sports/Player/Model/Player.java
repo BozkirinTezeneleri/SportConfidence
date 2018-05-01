@@ -26,6 +26,7 @@ public class Player {
     private float Height;
     @Max(210)
     private float weight;
+    private String position;
     @NotNull(message="Please enter a date")
     @JsonFormat(shape = JsonFormat.Shape.ANY, pattern = "yyyy-MM-dd")
     private Date contractTimeEnd;
