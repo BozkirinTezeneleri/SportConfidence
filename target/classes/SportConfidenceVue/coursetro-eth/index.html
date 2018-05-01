@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sport-Test</title>
+
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+
+  </head>
+  <body>
+
+    <div>
+      <h2>NEW PLAYER INFORMATION</h2>
+      <hr>
+      <form id="PlayerAdd">
+        <div>
+          <label for="name">Name :</label>
+          <input type="text" id="name" >
+        </div>
+        <div>
+          <label for="surname">Surname :</label>
+          <input type="text" id="surname" >
+        </div>
+        <div>
+          <label for="birthDate">BirthDate :</label>
+          <input type="date" id="birthDate"  placeholder="DD-MM-YYYY">
+        </div>
+
+        <div>
+          <label for="weight">Weight :</label>
+          <input type="range" step="0.1" min="40" max="120" id="weight"  placeholder="73.0">
+          <input type="text" id="weight" placeholder="73.0" style="width:5%;">
+          <label for="weight">kg.</label>
+        </div>
+
+        <div>
+          <label for="height">Height :</label>
+          <input type="range" step="0.1" min="100" max="210" id="height" placeholder="180.0">
+          <input type="text" id="height"placeholder="180.0" style="width:5%;">
+          <label for="height">cm.</label>
+        </div>
+
+        <div>
+          <label for="contractTimeStart">Contract Time Start :</label>
+          <input type="date" id="contractTimeStart" placeholder="DD-MM-YYYY">
+        </div>
+
+        <div>
+          <label for="contractTimeEnd">Contract Time End :</label>
+          <input type="date" id="contractTimeEnd" placeholder="DD-MM-YYYY">
+        </div>
+
+        <div>
+          <label for="country">Citizenship :</label>
+          <select class="" id="country">
+            <option>COUNTRIES</option>
+
+          </select>
+        </div>
+
+        <div>
+          <label for="disabilityState">Disability State :</label>
+          <select class="" id="disabilityState" >
+            <option>true</option>
+            <option>false</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="disabilityInformation">Disability Information :</label>
+          <textarea rows="3" cols="40" id="disabilityInformation" ></textarea>
+        </div>
+
+        <div>
+          <label for="testimonial">Testimonial :</label>
+          <input type="text" id="testimonial"  placeholder="150.0" style="width:20%;">
+          <label for="testimonial">$</label>
+        </div>
+        <hr>
+        <h2>TEAM INFORMATION</h2>
+        <div>
+          <label for="">Country(yazma) :</label>
+          <select class="">
+            <option>Turkey</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="">League(yazma) :</label>
+          <select class="">
+            <option>Turkish Super League</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="">Sport Club(yazma) :</label>
+          <select class="">
+            <option>Fenerbahce</option>
+          </select>
+        </div>
+        <hr>
+
+        <button id="button">SAVE</button>
+        <hr>
+
+
+
+
+      </form>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <script>
+    
+    var  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    web3.eth.defaultAccount=web3.eth.accounts[0];
+    var PlayerContract = web3.eth.contract([
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "surname",
+				"type": "string"
+			},
+			{
+				"name": "birthDate",
+				"type": "string"
+			},
+			{
+				"name": "height",
+				"type": "uint256"
+			},
+			{
+				"name": "weight",
+				"type": "uint256"
+			},
+			{
+				"name": "contractTimeEnd",
+				"type": "string"
+			},
+			{
+				"name": "contractTimeStart",
+				"type": "string"
+			},
+			{
+				"name": "country",
+				"type": "string"
+			},
+			{
+				"name": "sportClub",
+				"type": "string"
+			},
+			{
+				"name": "disabilityState",
+				"type": "bool"
+			},
+			{
+				"name": "disabilityInformation",
+				"type": "string"
+			},
+			{
+				"name": "testimonial",
+				"type": "uint256"
+			}
+		],
+		"name": "setPlayer",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPlayer",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]);
+
+    var player = PlayerContract.at('0x3ab80ddd6267bf4eb79f3519ad1243c52a4ea031');
+
+
+
+
+    var button = document.getElementById('button');
+    var output = document.getElementById('output');
+
+   button.addEventListener('click', function(){
+      player.setPlayer(
+        $("#name").val(),
+        $("#surname").val(),
+        $("#birthDate").val(),
+        $("#height").val(),
+        $("#weight").val(),
+        $("#contractTimeStart").val(),
+        $("#contractTimeEnd").val(),
+        //$("#country").val(),
+        //$("#sportClub").val(),
+        $("#disabilityState").val(),
+        $("#disabilityInformation").val(),
+        $("#testimonial").val(),
+      );
+      consol.log("calıştı")
+
+    });
+
+/*
+  $("#button").click(function() {
+          player.setPlayer(
+              $("#name").val(),
+              $("#surname").val(),
+              $("#birthDate").val(),
+              $("#height").val(),
+              $("#weight").val(),
+              $("#contractTimeStart").val(),
+              $("#contractTimeEnd").val(),
+              //$("#country").val(),
+              //$("#sportClub").val(),
+              $("#disabilityState").val(),
+              $("#disabilityInformation").val(),
+              $("#testimonial").val(),
+
+            );
+        }); */
+
+    </script>
+
+  </body>
+</html>

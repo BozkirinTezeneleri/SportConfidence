@@ -21,4 +21,7 @@ public class SportClubService {
         return sportClubRepo.findAll();
     }
 
+    public List<SportClub> findSportClubByLeagueId(Integer id) {
+        return sportClubRepo.findSportClubsByLeague_LeagueId(id);
+    }
 }

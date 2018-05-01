@@ -1,10 +1,23 @@
 <template>
 
-  <div>
-  <template v-for="user in users">
-    <user-item :user=user></user-item>
-  </template>
-  </div>
+  <div class="container">
+    <div class="row text-center" id= "heading">
+          <div class="col-md-6 col-md-offset-3 wow animated zoomInDown" id= "heading-text">
+            <h3>User List</h3>
+                <p>Users</p>
+                <hr class= "full">
+                <br/>
+          </div>
+        </div>
+        <div class="row main_content">
+
+          <template v-for="user in users">
+            <user-item :user=user></user-item>
+          </template>
+
+        </div> <!-- row main_content -->
+  </div>	<!-- container -->
+
 </template>
 
 <script>
