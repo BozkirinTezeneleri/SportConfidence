@@ -23,7 +23,7 @@ public class Player {
     @JsonFormat(shape = JsonFormat.Shape.ANY, pattern = "yyyy-MM-dd")
     private Date birthDate;
     @Max(210)
-    private float Height;
+    private float height;
     @Max(210)
     private float weight;
     private String position;

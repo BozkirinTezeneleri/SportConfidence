@@ -13,7 +13,7 @@
 
       <div class="row main_content">
 
-        <div v-if="submitInfo" class="alert alert-success">
+        <div v-if="submitInfo" class="alert alert-success animated zoomInDown">
             <strong>Succesful Record!</strong> {{submitInfo}}
         </div>
 
@@ -87,13 +87,8 @@
 
       </div> <!-- row main_content -->
 
-
-
     </div>	<!-- team-members -->
    </div>	<!-- container -->
-
-
-
 
 </template>
 
@@ -123,6 +118,7 @@ export default {
 
     created(){
       console.log("RUNNING INFORMATION : UserAdd is running...")
+
     },
 
     addUser(){

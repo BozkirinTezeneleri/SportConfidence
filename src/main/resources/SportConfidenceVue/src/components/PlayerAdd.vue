@@ -15,7 +15,7 @@
 
       <div class="row main_content">
 
-        <div v-if="submitInfo" class="alert alert-success">
+        <div v-if="submitInfo" class="alert alert-success animated zoomInDown">
             <strong>Succesful Record!</strong> {{submitInfo}}
         </div>
 
@@ -54,7 +54,7 @@
                       <i class="fa fa-tags fa-fw"></i> Weight (kg.)
                     </span>
                   <input class="form-control" type="range" step="0.1" min="40" max="120" id="weight" v-model="newPlayer.weight" placeholder="73.0" style="width:75%;">
-                  <input class="form-control" type="text" id="height" v-model.trim="newPlayer.weight" placeholder="73.0" style="width:25%;">
+                  <input class="form-control" type="text" id="weight" v-model.trim="newPlayer.weight" placeholder="73.0" style="width:25%;">
                 </div>
 
                 <div class="input-group margin-bottom-sm">
@@ -104,14 +104,14 @@
                     <span class="input-group-addon">
                       <i class="fa fa-comment-o fa-fw"></i>
                     </span>
-                  <textarea class="form-control" rows="6" type= "text"  v-model="newPlayer.disabilityInformation" placeholder="Enter Disability Information" required></textarea>
+                  <textarea class="form-control" id="disabilityInformation" rows="6" type= "text"  v-model="newPlayer.disabilityInformation" placeholder="Enter Disability Information" required></textarea>
                 </div>
 
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Testimonial ($)
                     </span>
-                  <input class="form-control" type="text" v-model.trim="newPlayer.testimonial" placeholder="150.0 $">
+                  <input class="form-control" id="testimonial" type="text" v-model.trim="newPlayer.testimonial" placeholder="150.0 $">
                 </div>
 
                 <hr>
@@ -119,21 +119,9 @@
 
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
-                      <i class="fa fa-tags fa-fw"></i> Is he playing in a sport club?
-                    </span>
-                  <select class="form-control" id="country" v-model="isThereHisClub">
-
-                    <option value="true">Yes</option>
-                    <option value="false">No</option>
-
-                  </select>
-                </div>
-
-                <div v-if="isThereHisClub" class="input-group margin-bottom-sm">
-                    <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Country
                     </span>
-                  <select class="form-control" id="country" v-model="selectedCountryId" :onchange="getLeagues(selectedCountryId)">
+                  <select class="form-control" id="country" v-model="selectedCountryId" v-on:change="getLeagues(selectedCountryId)">
 
                     <option v-for="country in countries" :value="country.countryId"> {{country.countryName}} </option>
 
@@ -143,7 +131,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> League
                     </span>
-                  <select class="form-control" id="league" v-model="selectedLeagueId" :onchange="getSportClubs(selectedLeagueId)">
+                  <select class="form-control" id="league" v-model="selectedLeagueId" v-on:change="getSportClubs(selectedLeagueId)">
 
                     <option v-for="league in leagues" :value="league.leagueId"> {{league.leagueName}} </option>
 
@@ -223,12 +211,12 @@ export default {
         contractTimeEnd:'',
         testimonial:'',
         country:{
-          countryId:0,
+          countryId:1,
           //id:90,
           //countryName:'turkey'
         },
         sportClub:{
-          sportClubId:0,
+          sportClubId:1,
           /*name:'fb',
           league:{
             leagueId:1,
@@ -244,8 +232,6 @@ export default {
       },
       submitData: null,
       submitInfo:null,
-
-      isThereHisClub:false,
 
       countries:{},
       selectedCountryId:null,

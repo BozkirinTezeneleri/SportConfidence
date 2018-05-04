@@ -1,2 +1,0 @@
--Player ve user için resim eklenecek
--Country, league, sportClub sorguları için path ler ayarlanacak

@@ -1,106 +1,190 @@
 <template>
 
-  <div>
-    <h2>NEW PLAYER INFORMATION</h2>
-    <hr>
-    <form v-if="!editData" v-on:submit.prevent="updatePlayer" id="editPlayer">
-      <div>
-        <label for="name">Name :</label>
-        <input type="text" id="name" v-model="editPlayer.name">
-      </div>
-      <div>
-        <label for="surname">Surname :</label>
-        <input type="text" id="name" v-model="editPlayer.surname">
-      </div>
-      <div>
-        <label for="birthDate">BirthDate :</label>
-        <input type="date" id="birthDate" v-model="editPlayer.birthDate" placeholder="DD-MM-YYYY">
+  <div class="container">
+    <div class="team-members">
+      <div class="row text-center" id="heading">
+
+          <div class= "col-md-6 col-md-offset-3 wow animated zoomInDown" id= "heading-text">
+              <h3>Edit Player</h3>
+                  <p>Enter New Information For This Player</p>
+                  <hr class= "full">
+                  <br/>
+          </div>
+
       </div>
 
-      <div>
-        <label for="weight">Weight :</label>
-        <input type="range" step="0.1" min="40" max="120" id="weight" v-model="editPlayer.weight" placeholder="73.0">
-        <input type="text" id="weight" v-model="editPlayer.weight" placeholder="73.0" style="width:5%;">
-        <label for="weight">kg.</label>
+      <div class="row main_content">
+
+        <div v-if="submitInfo" class="alert alert-success animated zoomInDown">
+            <strong>Succesful Record!</strong> {{submitInfo}}
+        </div>
+
+        <div class= "row text-center main_content">
+
+          <div class= "col-md-6 col-md-offset-3 text-center">
+
+            <form v-on:submit.prevent="updatePlayer(editPlayerInfo.playerId)" id="PlayerAdd" method="post" action="#">
+              <div class= "form">
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-user fa-fw"></i>
+                    </span>
+                  <input class="form-control" type="text" id="name" v-model.trim="editPlayerInfo.name" placeholder="Name" required>
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-envelope-o fa-fw"></i>
+                    </span>
+                  <input class="form-control" type="text" id="surname" v-model.trim="editPlayerInfo.surname" placeholder="Surname" required>
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> BirthDate
+                    </span>
+                  <input class="form-control" type="date" id="birthDate" v-model="editPlayerInfo.birthDate">
+
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> Weight (kg.)
+                    </span>
+                  <input class="form-control" type="range" step="0.1" min="40" max="120" id="weight" v-model="editPlayerInfo.weight" placeholder="73.0" style="width:75%;">
+                  <input class="form-control" type="text" id="weight" v-model.trim="editPlayerInfo.weight" placeholder="73.0" style="width:25%;">
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> Height (cm.)
+                    </span>
+                  <input class="form-control" type="range" step="0.1" min="100" max="210" id="height" v-model="editPlayerInfo.height" placeholder="180.0" style="width:75%;">
+                  <input class="form-control" type="text" id="height" v-model.trim="editPlayerInfo.height" placeholder="180.0" style="width:25%;">
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> Citizenship
+                    </span>
+                  <select class="form-control" id="country" v-model="editPlayerInfo.country.countryId">
+
+                    <option v-for="country in countries" :value="country.countryId"> {{country.countryName}} </option>
+
+                  </select>
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> Position
+                    </span>
+                  <select class="form-control" id="position" v-model="editPlayerInfo.position">
+
+                    <option>Goalkeeper</option>
+                    <option>Defence</option>
+                    <option>Midfielder</option>
+                    <option>Striker</option>
+
+                  </select>
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i>Disability State
+                    </span>
+                  <select class="form-control" id="disabilityState" v-model="editPlayerInfo.disabilityState" >
+                    <option>true</option>
+                    <option>false</option>
+                  </select>
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-comment-o fa-fw"></i>
+                    </span>
+                  <textarea class="form-control" id="disabilityInformation" rows="6" type= "text"  v-model="editPlayerInfo.disabilityInformation" placeholder="Enter Disability Information" required></textarea>
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> Testimonial ($)
+                    </span>
+                  <input class="form-control" id="testimonial" type="text" v-model.trim="editPlayerInfo.testimonial" placeholder="150.0 $">
+                </div>
+
+                <hr>
+                <h2>TEAM INFORMATION</h2>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> Country
+                    </span>
+                  <select class="form-control" id="country" v-model="selectedCountryId" v-on:change="getLeagues(selectedCountryId)">
+
+                    <option v-for="country in countries" :value="country.countryId"> {{country.countryName}} </option>
+
+                  </select>
+                </div>
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> League
+                    </span>
+                  <select class="form-control" id="league" v-model="selectedLeagueId" v-on:change="getSportClubs(selectedLeagueId)">
+
+                    <option v-for="league in leagues" :value="league.leagueId"> {{league.leagueName}} </option>
+
+                  </select>
+                </div>
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> Sport Club
+                    </span>
+                  <select class="form-control" id="sportClub" v-model="selectedSportClubId">
+
+                    <option v-for="sportclub in sportclubs" :value="sportclub.sportClubId"> {{sportclub.name}} </option>
+
+                  </select>
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> Contract Time Start
+                    </span>
+                  <input class="form-control" type="date" id="contractTimeStart" v-model="editPlayerInfo.contractTimeStart">
+
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> Contract Time End
+                    </span>
+                  <input class="form-control" type="date" id="contractTimeEnd" v-model="editPlayerInfo.contractTimeEnd">
+
+                </div>
+                <hr>
+
+                <button class="btn btn-primary send" type="submit">UPDATE INFORMATIONS</button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+
       </div>
 
-      <div>
-        <label for="height">Height :</label>
-        <input type="range" step="0.1" min="100" max="210" id="height" v-model="editPlayer.height" placeholder="180.0">
-        <input type="text" id="height" v-model="editPlayer.height" placeholder="180.0" style="width:5%;">
-        <label for="height">cm.</label>
-      </div>
-
-      <div>
-        <label for="contractTimeStart">Contract Time Start :</label>
-        <input type="date" id="contractTimeStart" v-model="editPlayer.contractTimeStart" placeholder="DD-MM-YYYY">
-      </div>
-
-      <div>
-        <label for="contractTimeEnd">Contract Time End :</label>
-        <input type="date" id="contractTimeEnd" v-model="editPlayer.contractTimeEnd" placeholder="DD-MM-YYYY">
-      </div>
-
-      <div>
-        <label for="">Citizen(yazma) :</label>
-        <input type="text"/>
-      </div>
-
-      <div>
-        <label for="disabilityState">Disability State :</label>
-        <select class="" id="disabilityState" v-model="editPlayer.disabilityState">
-          <option>true</option>
-          <option>false</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="disabilityInformation">Disability Information :</label>
-        <textarea rows="3" cols="40" id="disabilityInformation" v-model="editPlayer.disabilityInformation"></textarea>
-      </div>
-
-      <div>
-        <label for="testimonial">Testimonial :</label>
-        <input type="text" id="testimonial" v-model="editPlayer.testimonial" placeholder="example : 150.0">
-        <label for="testimonial">$</label>
-      </div>
-      <hr>
-      <h2>TEAM INFORMATION</h2>
-      <div>
-        <label for="">Country(yazma) :</label>
-        <select class="">
-          <option>Turkey</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="">League(yazma) :</label>
-        <select class="">
-          <option>Turkish Super League</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="">Sport Club(yazma) :</label>
-        <select class="">
-          <option>Fenerbahce</option>
-        </select>
-      </div>
-      <hr>
-
-      <button type="submit">UPDATE</button>
-      <hr>
-      <p v-if="editData">{{editData}}</p>
-      <hr>
-
-    </form>
-    <div v-if="editInfo">
-      <center>
-        <b><p>{{editInfo}}</p></b>
-        <button @click="goBack">Go Back to Player List</button>
-      </center>
+    </div>	<!-- team-members -->
+    <br>
+    <div v-if="editInfo" class="alert alert-success animated zoomInDown">
+        <strong>Succesful Update!</strong> {{editInfo}}
     </div>
-  </div>
+
+
+  </div>	<!-- container -->
+
+
 </template>
 
 <script>
@@ -108,75 +192,95 @@
 export default {
   name: 'EditPlayer',
 
+  props:{
+
+    editPlayerInfo: { type: Object, required:true }
+
+  },
+
   data(){
     return{
       editPlayer:{
-        name: '',
-        surname: '',
-        birthDate:'',
-        weight:58.3,
-        height:180.6,
-        disabilityState:'',
-        disabilityInformation:'',
-        contractTimeStart:'',
-        contractTimeEnd:'',
-        testimonial:58.5,
+        name: null,
+        surname: null,
+        birthDate:null,
+        weight:null,
+        height:null,
+        position:null,
+        disabilityState:null,
+        disabilityInformation:null,
+        contractTimeStart:null,
+        contractTimeEnd:null,
+        testimonial:null,
         country:{
-          countryId:1,
-          //id:90,
-          //countryName:'turkey'
+          countryId:null,
+          //countryName:null
         },
         sportClub:{
-          sportClubId:1,
-          /*name:'fb',
+          sportClubId:null,
+
           league:{
-            leagueId:1,
-            leagueName:'Turkish Super League',
+            leagueId:null,
+            //leagueName:'Turkish Super League',
             country:{
-              countryId:1,
+              countryId:null,
               //id:90,
               //countryName:'turkey'
             }
-          }*/
+          }
         }
 
       },
       editData: null,
-      editInfo:null
+      editInfo:null,
+
+      isThereHisClub:false,
+
+      countries:{},
+      selectedCountryId:null,
+
+      leagues:{},
+      selectedLeagueId:null,
+
+      sportclubs:{},
+      selectedSportClubId:null
     }
   },
 
   created(){
-    this.getPlayer();
+
+    this.getCountries();
+    //this.getLeagues();
+    //this.getSportClubs();
   },
 
   methods:{
 
-    goBack(){
+    updatePlayer(playerId){
 
-        this.$router.push({ name : 'playerList' })//syfa yonlendirme
+      this.editPlayer.name=this.editPlayerInfo.name;
+      this.editPlayer.surname=this.editPlayerInfo.surname;
+      this.editPlayer.birthDate=this.editPlayerInfo.birthDate;
+      this.editPlayer.weight=this.editPlayerInfo.weight;
+      this.editPlayer.height=this.editPlayerInfo.height;
+      this.editPlayer.position=this.editPlayerInfo.position;
+      this.editPlayer.disabilityState=this.editPlayerInfo.disabilityState;
+      this.editPlayer.disabilityInformation=this.editPlayerInfo.disabilityInformation;
+      this.editPlayer.contractTimeStart=this.editPlayerInfo.contractTimeStart;
+      this.editPlayer.contractTimeEnd=this.editPlayerInfo.contractTimeEnd;
+      this.editPlayer.testimonial=this.editPlayerInfo.testimonial;
+      this.editPlayer.country.countryId=this.editPlayerInfo.country.countryId;
+      this.editPlayer.sportClub.sportClubId=this.selectedSportClubId;
+      this.editPlayer.sportClub.league.leagueId=this.selectedLeagueId;
+      this.editPlayer.sportClub.league.country.countryId=this.selectedCountryId;
 
-    },
-
-    getPlayer(){
-      console.log("RUNNING INFORMATION : GetPlayer is running for All Players...");
-
-      var url = `http://localhost:8080/players/${this.$route.params.playerId}`;
-      this.$http.get(url).then(function (resp) {
-        //console.log(resp.status);
-        if (resp.status == 200) {
-
-          console.log("INFO : Player informations added to form elements...");
-          this.editPlayer = resp.data;
-        }
-      });
-    },
-
-    updatePlayer(){
       this.editData = JSON.stringify(this.editPlayer);
+
+      //console.log(this.editData);
+
       console.log("RUNNING INFORMATION : UpdatePlayer is running...");
 
-      var url = `http://localhost:8080/players/${this.$route.params.playerId}`;
+      var url = `http://localhost:8080/players/`+playerId;
 
       //////////// START-VueResource-PUT ////////////////////
        this.$http.put(url, this.editData).then(function(resp) {
@@ -191,15 +295,15 @@ export default {
              this.editPlayer.name=null
              this.editPlayer.surname=null
              this.editPlayer.birthDate=null
-             this.editPlayer.weight=73.4
+             this.editPlayer.weight=null
              this.editPlayer.contractTimeStart=null
              this.editPlayer.contractTimeEnd=null
-             this.editPlayer.country.countryId=1
+             this.editPlayer.country.countryId=null
              this.editPlayer.sportClub.sportClubId=1
              this.editPlayer.disabilityInformation=null
              this.editPlayer.disabilityState=null
-             this.editPlayer.testimonial=58.3
-             this.editPlayer.height=180.2
+             this.editPlayer.testimonial=null
+             this.editPlayer.height=null
              this.editInfo='...Succesful Update Operation for This Player...'
 
          }
@@ -208,8 +312,58 @@ export default {
        })
          .catch((err)=>console.error(err))
       //////////// END-VueResource-PUT ////////////////////
+    },
+
+    getCountries(){
+
+      console.log("RUNNING INFORMATION : GetUser is running for All Users...");
+
+      var url = 'http://localhost:8080/countries';
+      this.$http.get(url).then(function (resp) {
+        //console.log(resp.status);
+        if (resp.status == 200) {
+          console.log("INFO : Accepted All User and Added Countries...");
+
+          this.countries = resp.data;
+
+        }
+      });
+    },
+
+    getLeagues(countryId){
+
+      console.log("RUNNING INFORMATION : GetLeagues is running for Selected Country...");
+
+      var url = 'http://localhost:8080/leagues/country/'+countryId;
+      this.$http.get(url).then(function (resp) {
+        //console.log(resp.status);
+        if (resp.status == 200) {
+          console.log("INFO : Accepted All User and Added Leagues for Selected Country...");
+
+          this.leagues = resp.data;
+
+        }
+      });
+    },
+
+    getSportClubs(leagueId){
+
+      console.log("RUNNING INFORMATION : GetSportClubs is running for Selected League...");
+
+      var url = 'http://localhost:8080/sportclubs/league/'+leagueId;
+      this.$http.get(url).then(function (resp) {
+        //console.log(resp.status);
+        if (resp.status == 200) {
+          console.log("INFO : Accepted All User and Added SportClubs for Selected Leagues...");
+
+          this.sportclubs = resp.data;
+
+        }
+      });
     }
-  }
+  },
+
+
 
 
 

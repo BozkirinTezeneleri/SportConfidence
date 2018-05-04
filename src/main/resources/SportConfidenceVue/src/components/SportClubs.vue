@@ -17,7 +17,7 @@
             <span class="input-group-addon">
               <i class="fa fa-tags fa-fw"></i> Country
             </span>
-          <select class="form-control" id="country" v-model="selectedCountryId" :onchange="getLeagues(selectedCountryId)">
+          <select class="form-control" id="country" v-model="selectedCountryId" v-on:change="getLeagues(selectedCountryId)">
 
             <option v-for="country in countries" :value="country.countryId"> {{country.countryName}} </option>
 
@@ -27,7 +27,7 @@
             <span class="input-group-addon">
               <i class="fa fa-tags fa-fw"></i> League
             </span>
-          <select class="form-control" id="league" v-model="selectedLeagueId" :onchange="getSportClubs(selectedLeagueId)">
+          <select class="form-control" id="league" v-model="selectedLeagueId" v-on:change="getSportClubs(selectedLeagueId)">
 
             <option v-for="league in leagues" :value="league.leagueId"> {{league.leagueName}} </option>
 
@@ -37,7 +37,7 @@
             <span class="input-group-addon">
               <i class="fa fa-tags fa-fw"></i> Sport Club
             </span>
-          <select class="form-control" id="sportClub" v-model="selectedClubId" :onchange="getSportClubPlayers(selectedClubId)">
+          <select class="form-control" id="sportClub" v-model="selectedClubId" v-on:change="getSportClubPlayers(selectedClubId)">
 
             <option v-for="sportClub in sportClubs" :value="sportClub.sportClubId"> {{sportClub.name}} </option>
 
@@ -81,12 +81,13 @@
                                           </div>
                                         </td>
 
-                                        <td><router-link href="#playerProfile" :to="profileLink(sportClubPlayer.playerId)"> {{sportClubPlayer.name}} {{sportClubPlayer.surname}} </router-link></td>
+                                        <td style="color: rgb(32, 178, 170);">{{sportClubPlayer.name}} {{sportClubPlayer.surname}}</td>
                                         <td>{{sportClubPlayer.country.countryName}}</td>
                                         <td>{{sportClubPlayer.position}}</td>
                                         <td>{{sportClubPlayer.height}}</td>
                                         <td>{{sportClubPlayer.weight}}</td>
                                         <td>{{sportClubPlayer.disabilityState}}</td>
+                                        <td><button class="btn btn-primary send" @click="getPlayerProfile(sportClubPlayer.playerId)">SHOW PROFILE</button></td>
                                     </tr>
 
                                 </tbody>
@@ -96,7 +97,14 @@
                 </div>
             </div>
 
-    <hr>
+  
+    <!-- <p v-model="yazi">{{yazi}}</p> -->
+    <!-- Players -->
+	  <section id="player_list">
+
+        <player-profile v-if="selectedClubPlayerId" :selectedPlayer=selectedClubPlayer></player-profile>
+
+	  </section><!-- players -->
   </div>	<!-- container -->
 
 </template>
@@ -118,6 +126,7 @@ export default {
       selectedClubId:null,
 
       sportClubPlayers:{},
+      selectedClubPlayer:{},
       selectedClubPlayerId:null,
 
     }
@@ -125,15 +134,25 @@ export default {
 
   methods:{
 
+    getPlayerProfile(playerId){
+      this.selectedClubPlayerId=playerId;
+
+      console.log("RUNNING INFORMATION : FetchData is running for selected Player...");
+
+      fetch(`http://localhost:8080/players/`+playerId)//istek
+      .then((res) => {return res.json()})//response json a cevrildi
+      .then((player) => { this.selectedClubPlayer=player;})
+    },
+
     getCountries(){
 
-      console.log("RUNNING INFORMATION : GetUser is running for All Users...");
+      console.log("RUNNING INFORMATION : GetCountries is running for All Country...");
 
       var url = 'http://localhost:8080/countries';
       this.$http.get(url).then(function (resp) {
         //console.log(resp.status);
         if (resp.status == 200) {
-          console.log("INFO : Accepted All User and Added Countries...");
+          console.log("INFO : Accepted All Country and Added Countries...");
 
           this.countries = resp.data;
 
@@ -149,7 +168,7 @@ export default {
       this.$http.get(url).then(function (resp) {
         //console.log(resp.status);
         if (resp.status == 200) {
-          console.log("INFO : Accepted All User and Added Leagues for Selected Country...");
+          console.log("INFO : Accepted All Leagues for Selected Country...");
 
           this.leagues = resp.data;
 
@@ -165,7 +184,7 @@ export default {
       this.$http.get(url).then(function (resp) {
         //console.log(resp.status);
         if (resp.status == 200) {
-          console.log("INFO : Accepted All User and Added SportClubs for Selected Leagues...");
+          console.log("INFO : Accepted All SportClub and Added SportClubs for Selected Leagues...");
 
           this.sportClubs = resp.data;
 
@@ -181,7 +200,7 @@ export default {
       this.$http.get(url).then(function (resp) {
         //console.log(resp.status);
         if (resp.status == 200) {
-          console.log("INFO : Accepted All User and Added SportClubs for Selected Leagues...");
+          console.log("INFO : Accepted All Player and Added Players for Selected SportClub...");
 
           this.sportClubPlayers = resp.data;
 
@@ -190,10 +209,6 @@ export default {
       });
     },
 
-    profileLink(playerId) {
-
-      return `/players/`+playerId;
-    },
 
   },
 
@@ -203,7 +218,6 @@ export default {
     //this.getLeagues();
     //this.getSportClubs();
   },
-
 
 }
 </script>

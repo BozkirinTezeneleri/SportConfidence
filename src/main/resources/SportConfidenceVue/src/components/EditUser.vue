@@ -27,7 +27,7 @@
 
       <div>
         <label for="phone">Phone Number :</label>
-        <input type="text" id="phone" v-model="editUser.phone" placeholder="Please, enter 10 character..." minlength="10" maxlength="10">
+        <input type="text" id="phone" v-model="editUser.phone" placeholder="Please, enter 11 character..." minlength="11" maxlength="11">
       </div>
 
       <div>

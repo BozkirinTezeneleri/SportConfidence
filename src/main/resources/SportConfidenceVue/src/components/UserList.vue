@@ -16,6 +16,7 @@
           </template>
 
         </div> <!-- row main_content -->
+        
   </div>	<!-- container -->
 
 </template>
@@ -49,14 +50,22 @@ export default {
       });
     }
   },
-  watch : {
-    users: 'getUser'
-  },
+
+  /*computed() {
+    return{
+      users: 'getUser'
+    }
+  },*/
 
   created(){
     console.log("RUNNING INFORMATION : UserList is running...");
 
-    this.getUser();
+    //this.getUser();
+
+    setInterval(() => {
+        this.getUser();
+        //console.log("aaa")
+    },3000);
 
   },
 
