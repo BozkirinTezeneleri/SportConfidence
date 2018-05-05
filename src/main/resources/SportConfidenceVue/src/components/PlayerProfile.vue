@@ -20,10 +20,10 @@
                 <img class="img-circle img-responsive center-block" src="src/assets/img/Syed-Rezwanul-Haque.jpg" alt="Syed Rezwanul Haque Rubel">
               </div>
             </div>
-            <h4 class="wow animated fadeInUp" data-wow-delay= "0.2s">
-              <router-link to="profileLink">
+            <h4 class="wow animated fadeInUp" data-wow-delay= "0.2s" style="color: rgb(32, 178, 170);">
+
                 {{selectedPlayer.playerId}} - {{selectedPlayer.name}} {{selectedPlayer.surname}}
-              </router-link>
+
             </h4>
             <p class= "member-title wow animated fadeIn" data-wow-delay= "0.3s">{{selectedPlayer.sportClub.name}}</p>
 

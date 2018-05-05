@@ -5,297 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/sport.mv.db" afterPath="$PROJECT_DIR$/sport.mv.db" />
       <change beforePath="$PROJECT_DIR$/sport.trace.db" afterPath="$PROJECT_DIR$/sport.trace.db" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sports/Player/Model/Player.java" afterPath="$PROJECT_DIR$/src/main/java/com/sports/Player/Model/Player.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/.babelrc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/.editorconfig" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/country.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/coursetro-eth/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/coursetro-eth/index1.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/coursetro-eth/package-lock.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/coursetro-eth/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/coursetro-eth/test.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/eksikler.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/ethereum-truffle/build/contracts/player.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/ethereum-truffle/contracts/Migrations.sol" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/ethereum-truffle/migrations/1_initial_migration.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/ethereum-truffle/truffle-config.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/ethereum-truffle/truffle.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/package-lock.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/App.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/css/animate.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/css/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/css/ionicons.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/css/newcustom.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/css/omnes-pro.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/css/owl.carousel.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/css/owl.theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/css/owl.transitions.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/fonts/ionicons.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/fonts/ionicons.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/fonts/ionicons.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/fonts/ionicons.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/3-col-icons-android.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/3-col-icons-iphone.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/3-col-icons-web.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/Shahjahan-Jewel.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/Syed-Rezwanul-Haque.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/app-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/app-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/app-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/background.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/blog3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/client1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/client2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/client3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/design1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/game-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/game-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/game-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/global_focus.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/nathan.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/post-shadow.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/web-design-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/web-design-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/img/web-design-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/app.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/bootstrap3-wysihtml5.all.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/dashboard.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/daterangepicker.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/isotope.pkgd.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/jquery-ui-1.10.3.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/jquery.actual.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/jquery.knob.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/owl.carousel.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/script.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/js/wow.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/assets/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/AboutUs.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/ContactUs.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/EditPlayer.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/EditUser.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/PlayerAdd.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/PlayerItem.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/PlayerList.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/PlayerProfile.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/SportClubs.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/UserAdd.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/UserItem.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/UserList.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/components/UserProfile.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/src/main.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/css/animate.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/css/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/css/custom.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/css/ionicons.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/css/omnes-pro.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/css/owl.carousel.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/css/owl.theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/css/owl.transitions.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/fonts/ionicons.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/fonts/ionicons.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/fonts/ionicons.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/fonts/ionicons.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/3-col-icons-android.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/3-col-icons-iphone.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/3-col-icons-web.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/Shahjahan-Jewel.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/Syed-Rezwanul-Haque.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/app-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/app-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/app-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/background.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/blog3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/client1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/client2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/client3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/design1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/game-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/game-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/game-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/global_focus.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/nathan.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/post-shadow.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/web-design-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/web-design-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/img/web-design-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/app.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/bootstrap3-wysihtml5.all.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/dashboard.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/daterangepicker.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/isotope.pkgd.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/jquery-ui-1.10.3.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/jquery.actual.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/jquery.knob.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/owl.carousel.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/script.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/template/Renessa-master/js/wow.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/webpack.config.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/.babelrc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/.editorconfig" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/coursetro-eth/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/coursetro-eth/index1.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/coursetro-eth/package-lock.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/coursetro-eth/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/eksikler.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/ethereum-truffle/contracts/Migrations.sol" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/ethereum-truffle/migrations/1_initial_migration.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/ethereum-truffle/truffle-config.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/ethereum-truffle/truffle.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/package-lock.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/App.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/css/animate.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/css/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/css/ionicons.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/css/newcustom.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/css/omnes-pro.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/css/owl.carousel.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/css/owl.theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/css/owl.transitions.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/fonts/ionicons.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/fonts/ionicons.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/fonts/ionicons.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/fonts/ionicons.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/3-col-icons-android.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/3-col-icons-iphone.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/3-col-icons-web.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/Shahjahan-Jewel.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/Syed-Rezwanul-Haque.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/app-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/app-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/app-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/background.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/blog3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/client1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/client2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/client3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/design1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/game-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/game-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/game-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/global_focus.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/nathan.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/post-shadow.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/web-design-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/web-design-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/img/web-design-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/app.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/bootstrap3-wysihtml5.all.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/dashboard.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/daterangepicker.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/isotope.pkgd.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/jquery-ui-1.10.3.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/jquery.actual.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/jquery.knob.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/owl.carousel.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/script.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/js/wow.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/assets/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/EditPlayer.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/EditUser.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/PlayerAdd.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/PlayerItem.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/PlayerList.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/PlayerProfile.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/UserAdd.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/UserItem.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/UserList.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/UserProfile.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/main.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/css/animate.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/css/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/css/custom.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/css/ionicons.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/css/omnes-pro.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/css/owl.carousel.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/css/owl.theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/css/owl.transitions.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/fonts/ionicons.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/fonts/ionicons.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/fonts/ionicons.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/fonts/ionicons.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/3-col-icons-android.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/3-col-icons-iphone.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/3-col-icons-web.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/Shahjahan-Jewel.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/Syed-Rezwanul-Haque.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/app-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/app-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/app-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/background.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/blog3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/client1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/client2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/client3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/design1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/game-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/game-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/game-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/global_focus.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/nathan.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/post-shadow.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/web-design-1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/web-design-2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/img/web-design-3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/app.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/bootstrap3-wysihtml5.all.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/dashboard.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/daterangepicker.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/isotope.pkgd.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/jquery-ui-1.10.3.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/jquery.actual.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/jquery.knob.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/owl.carousel.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/script.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/template/Renessa-master/js/wow.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/webpack.config.js" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -307,7 +16,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GeneralController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GeneralController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/GeneralControllers/GeneralController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="666">
@@ -317,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Player/Model/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="666">
-              <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+              <caret line="37" column="14" lean-forward="false" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -381,6 +90,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/coursetro-eth/node_modules" />
+    <handled-path value="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/node_modules" />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="47" />
     <option name="y" value="24" />
@@ -403,7 +116,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -478,8 +191,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -942,11 +655,12 @@
       <workItem from="1525287564457" duration="1259000" />
       <workItem from="1525424831793" duration="674000" />
       <workItem from="1525460042983" duration="674000" />
+      <workItem from="1525519523792" duration="833000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32562000" />
+    <option name="totallyTimeSpent" value="33395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="24" width="1857" height="1092" extended-state="6" />
@@ -1014,7 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1040,7 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1066,7 +778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,7 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1118,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1134,7 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="24" column="65" lean-forward="true" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1182,7 +890,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1365,21 +1072,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Player/Model/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/SportClub/Service/SportClubService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1388,6 +1084,16 @@
         <state relative-caret-position="666">
           <caret line="55" column="23" lean-forward="false" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Player/Model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" column="14" lean-forward="false" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

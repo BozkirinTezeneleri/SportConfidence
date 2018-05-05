@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!--new-meta-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--new-meta-->
+    <!--new-css -->
+    <link rel="stylesheet" href="src/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="src/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="src/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="src/assets/css/owl.theme.css">
+    <link rel="stylesheet" href="src/assets/css/owl.transitions.css">
+    <link rel="stylesheet" href="src/assets/css/animate.css">
+    <link rel="stylesheet" href="src/assets/css/newcustom.css">
+    <!--new-css-->
+
+    <!-- js -->
+    <script src="src/assets/js/jquery.min.js"></script>
+    <script src="src/assets/js/bootstrap.min.js"></script>
+    <script src="src/assets/js/owl.carousel.min.js"></script>
+    <script src="src/assets/js/isotope.pkgd.min.js"></script>
+    <script src="src/assets/js/script.js"></script>
+    <script src="src/assets/js/wow.min.js"></script>
+    <script src="src/assets/js/jquery.actual.min.js"></script>
+    <!-- js -->
+    <title>Sport Confidence</title>
+
+
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/dist/build.js"></script>
+    <!-- js -->
+		<script>
+			$(document).ready(function() {
+  				$("#client-speech").owlCarousel({
+  					autoPlay: 3000,
+      				navigation : false, // Show next and prev buttons
+      				slideSpeed : 700,
+      				paginationSpeed : 1000,
+      				singleItem:true
+  				});
+			});
+		</script>
+		<script>
+ 			new WOW().init();
+		</script>
+		<script>
+			$( function() {
+				  // init Isotope
+			  	var $container = $('.isotope').isotope
+			  	({
+				    itemSelector: '.element-item',
+				    layoutMode: 'fitRows'
+			  	});
+
+
+  				// bind filter button click
+  				$('#filters').on( 'click', 'button', function()
+  				{
+				    var filterValue = $( this ).attr('data-filter');
+				    // use filterFn if matches value
+				    $container.isotope({ filter: filterValue });
+				 });
+
+			  // change is-checked class on buttons
+			  	$('.button-group').each( function( i, buttonGroup )
+			  	{
+			    	var $buttonGroup = $( buttonGroup );
+			    	$buttonGroup.on( 'click', 'button', function()
+			    	{
+			      		$buttonGroup.find('.is-checked').removeClass('is-checked');
+			      		$( this ).addClass('is-checked');
+			    	});
+			  	});
+
+			});
+		</script>
+        <script src="src/assets/js/jquery-ui-1.10.3.min.js"></script>
+        <script src="src/assets/js/jquery.knob.js"></script>
+        <script src="src/assets/js/daterangepicker.js"></script>
+        <script src="src/assets/js/bootstrap3-wysihtml5.all.min.js"></script>
+        <script src="src/assets/js/dashboard.js"></script>
+  </body>
+</html>

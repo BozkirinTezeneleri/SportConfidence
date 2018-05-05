@@ -15,10 +15,6 @@
 
       <div class="row main_content">
 
-        <div v-if="submitInfo" class="alert alert-success animated zoomInDown">
-            <strong>Succesful Record!</strong> {{submitInfo}}
-        </div>
-
         <div class= "row text-center main_content">
 
           <div class= "col-md-6 col-md-offset-3 text-center">
@@ -79,7 +75,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Position
                     </span>
-                  <select class="form-control" id="position" v-model="editPlayerInfo.position">
+                  <select class="form-control" id="position" v-model="editPlayerInfo.position" required>
 
                     <option>Goalkeeper</option>
                     <option>Defence</option>
@@ -93,7 +89,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i>Disability State
                     </span>
-                  <select class="form-control" id="disabilityState" v-model="editPlayerInfo.disabilityState" >
+                  <select class="form-control" id="disabilityState" v-model="editPlayerInfo.disabilityState" required>
                     <option>true</option>
                     <option>false</option>
                   </select>
@@ -110,7 +106,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Testimonial ($)
                     </span>
-                  <input class="form-control" id="testimonial" type="text" v-model.trim="editPlayerInfo.testimonial" placeholder="150.0 $">
+                  <input class="form-control" id="testimonial" type="text" v-model.trim="editPlayerInfo.testimonial" placeholder="150.0 $" required>
                 </div>
 
                 <hr>
@@ -120,7 +116,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Country
                     </span>
-                  <select class="form-control" id="country" v-model="selectedCountryId" v-on:change="getLeagues(selectedCountryId)">
+                  <select class="form-control" id="country" v-model="selectedCountryId" v-on:change="getLeagues(selectedCountryId)" required>
 
                     <option v-for="country in countries" :value="country.countryId"> {{country.countryName}} </option>
 
@@ -130,7 +126,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> League
                     </span>
-                  <select class="form-control" id="league" v-model="selectedLeagueId" v-on:change="getSportClubs(selectedLeagueId)">
+                  <select class="form-control" id="league" v-model="selectedLeagueId" v-on:change="getSportClubs(selectedLeagueId)" required>
 
                     <option v-for="league in leagues" :value="league.leagueId"> {{league.leagueName}} </option>
 
@@ -140,7 +136,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Sport Club
                     </span>
-                  <select class="form-control" id="sportClub" v-model="selectedSportClubId">
+                  <select class="form-control" id="sportClub" v-model="selectedSportClubId" required>
 
                     <option v-for="sportclub in sportclubs" :value="sportclub.sportClubId"> {{sportclub.name}} </option>
 
@@ -151,7 +147,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Contract Time Start
                     </span>
-                  <input class="form-control" type="date" id="contractTimeStart" v-model="editPlayerInfo.contractTimeStart">
+                  <input class="form-control" type="date" id="contractTimeStart" v-model="editPlayerInfo.contractTimeStart" required>
 
                 </div>
 
@@ -159,7 +155,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Contract Time End
                     </span>
-                  <input class="form-control" type="date" id="contractTimeEnd" v-model="editPlayerInfo.contractTimeEnd">
+                  <input class="form-control" type="date" id="contractTimeEnd" v-model="editPlayerInfo.contractTimeEnd" required>
 
                 </div>
                 <hr>
@@ -177,7 +173,7 @@
 
     </div>	<!-- team-members -->
     <br>
-    <div v-if="editInfo" class="alert alert-success animated zoomInDown">
+    <div v-if="editInfo" class="alert alert-info animated zoomInDown">
         <strong>Succesful Update!</strong> {{editInfo}}
     </div>
 
