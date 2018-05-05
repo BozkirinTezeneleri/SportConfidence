@@ -1,34 +1,96 @@
 <template>
 
-  <div>
-    <button @click="goBack">Go Back to Player List</button>
-    <button @click="editPlayer">Edit Player Information</button>
-    <h2><b>{{playerData.playerId}} -</b> {{playerData.name}} {{playerData.surname}}</h2>
-    <ul>
+  <div class="container">
+    <div class="row text-center" id="heading">
+      <div class="col-md-6 col-md-offset-3 wow animated zoomInDown" id="heading-text">
+          <h3>Player</h3>
+              <p>Selected Player Information</p>
+              <hr class="full">
+              <br/>
+        </div>
+    </div>	<!-- row -->
+    <div class="row main_content">
+        <div class="row" id="heading">
 
-      <li><b>Citizenship(Country) :</b> {{playerData.country.countryName}}</li>
-      <li><b>Birth Date :</b> {{playerData.birthDate}}</li>
-      <li><h4>-PYSICAL PROPERTIES</h4><li>
-      <li><b>Height :</b> {{playerData.height}} cm</li>
-      <li><b>Weight :</b> {{playerData.weight}} kg</li>
-      <li><h4>-TEAM & CONTRACT INFORMATION</h4><li>
-      <li><b>Sport Club :</b> {{playerData.sportClub.name}}</li>
-      <li><b>Contract Time Start :</b> {{playerData.contractTimeStart}}</li>
-      <li><b>Contract Time End :</b> {{playerData.contractTimeEnd}}</li>
-      <li><h4>-DISABILITY STATEMENT</h4><li>
-      <li><b>Disability State :</b> {{playerData.disabilityState}}</li>
-      <li><b>Disability Information :</b> {{playerData.disabilityInformation}}</li>
-      <li><h4>-TESTIMONIAL INFORMATION</h4><li>
-      <li><b>Testimonial :</b> {{playerData.testimonial}} $</li>
+          <!--PROFILE-->
+
+          <div class="col-md-4 col-sm-5 text-center">
+            <div class="row wow animated zoomIn" data-wow-delay="0.1s">
+              <div class="col-md-8 col-md-offset-2">
+                <img class="img-circle img-responsive center-block" src="src/assets/img/Syed-Rezwanul-Haque.jpg" alt="Syed Rezwanul Haque Rubel">
+              </div>
+            </div>
+            <h4 class="wow animated fadeInUp" data-wow-delay= "0.2s" style="color: rgb(32, 178, 170);">
+
+                {{selectedPlayer.playerId}} - {{selectedPlayer.name}} {{selectedPlayer.surname}}
+
+            </h4>
+            <p class= "member-title wow animated fadeIn" data-wow-delay= "0.3s">{{selectedPlayer.sportClub.name}}</p>
 
 
-    </ul>
+            <div v-if="deleteInfo" class="alert alert-warning wow animated zoomInDown">
+                <strong>User Deleted!</strong> {{deleteInfo}}
+            </div>
 
-    <br>
-    <router-link :to="prevPlayerLink">Previous Player</router-link>
-    <router-link :to="nextPlayerLink">Next Player</router-link>
+          </div>
 
-  </div>
+          <!--PROFILE-->
+
+          <!--PROFILE INFORMATION-->
+          <div class="col-md-8 col-sm-5" style="margin-top:25px;">
+            <div class="col-md-5 col-sm-5">
+                <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s" style="text-align:left;"><b>Position : </b>{{selectedPlayer.position}}</p>
+                <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s" style="text-align:left;"><b>Citizenship : </b>{{selectedPlayer.country.countryName}}</p>
+                <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s" style="text-align:left;"><b>Birth Date : </b>{{selectedPlayer.birthDate}}</p>
+                <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s" style="text-align:left;"><b>Height : </b>{{selectedPlayer.height}} cm.</p>
+                <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s" style="text-align:left;"><b>Weight : </b>{{selectedPlayer.weight}} kg.</p>
+
+                <div v-if="deleteInfo" class="alert alert-warning wow animated zoomInDown">
+                    <strong>User Deleted!</strong> {{deleteInfo}}
+                </div>
+
+            </div>
+
+            <div class="col-md-5 col-sm-5">
+                <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s" style="text-align:left;"><b>Contract Start : </b>{{selectedPlayer.contractTimeStart}}</p>
+                <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s" style="text-align:left;"><b>Contract Finish : </b>{{selectedPlayer.contractTimeEnd}}</p>
+                <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s" style="text-align:left;"><b>Testimonial: $ {{selectedPlayer.testimonial}} </b></p>
+                <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s" style="text-align:left;"><b>Disability State : {{selectedPlayer.disabilityState}} </b></p>
+                <p class= "team-member-description wow animated fadeIn" data-wow-delay= "0.4s" style="text-align:left;"><b>Disability Information : </b>{{selectedPlayer.disabilityInformation}}</p>
+
+                <div v-if="deleteInfo" class="alert alert-warning wow animated zoomInDown">
+                    <strong>User Deleted!</strong> {{deleteInfo}}
+                </div>
+
+            </div>
+
+          </div>
+          <div class="col-md-8 col-sm-5">
+            <div class= "row text-center wow animated fadeInDown" data-wow-delay= "0.5s">
+              <div class= "team-member-contact">
+                  <button class="btn btn-info" @click="editPlayerProfile(selectedPlayer.playerId)">EDIT INFORMATION</button>
+              </div>
+            </div>
+          </div>
+
+          <!--PROFILE INFORMATION-->
+
+
+
+        </div>
+    </div>	<!-- row main_content -->
+
+    <!-- Edit Players -->
+	  <section id="player_list">
+
+        <edit-player v-if="editPlayerId" :editPlayerInfo=editPlayer></edit-player>
+
+	  </section><!-- edit-players -->
+
+    <hr>
+
+  </div>	<!-- container -->
+
 
 </template>
 
@@ -37,52 +99,31 @@
 export default {
   name: 'PlayerProfile',
 
+  props:{
+
+    selectedPlayer: { type: Object, required:true }
+
+  },
+
   data(){
     return{
-      playerData:{}//Object temsil eder
+      editPlayer:{},
+      editPlayerId:null,
     }
   },
-  methods : {
-    fetchData(){
+  methods:{
 
-      console.log("RUNNING INFORMATION : FetchData is running for Player...");
+    editPlayerProfile(PlayerId){
+      this.editPlayerId=PlayerId;
 
-      fetch(`http://localhost:8080/players/${this.$route.params.playerId}`)//istek
+      console.log("RUNNING INFORMATION : FetchData is running for selected Player...");
+
+      fetch(`http://localhost:8080/players/`+PlayerId)//istek
       .then((res) => {return res.json()})//response json a cevrildi
-      .then((player) => { this.playerData=player;})
+      .then((player) => { this.editPlayer=player;})
     },
-    goBack(){
 
-        this.$router.push({ name : 'playerList' })//syfa yonlendirme
-
-    },
-    editPlayer(){
-
-        this.$router.push({ name : 'editPlayer' })//syfa yonlendirme
-
-    }
-  },
-  watch:{//olmazsa route degisir ama data degismez...
-    '$route' : 'fetchData' // route dinle...fetchData metodu yeniden calistir.
-  },
-  computed :{
-
-    nextPlayerLink(){
-      console.log("RUNNING INFORMATION : NextPlayerLink is running...");
-
-      return `/players/${parseInt(this.$route.params.playerId,10)+1}`;
-    },
-    prevPlayerLink(){
-      console.log("RUNNING INFORMATION : PrevPlayerLink is running...");
-
-      return `/players/${parseInt(this.$route.params.playerId,10)-1}`;
-    }
-  },
-
-  created(){
-    console.log("RUNNING INFORMATION : PlayerProfile is Running...")
-    this.fetchData();
-  }
+   },
 
 }
 </script>

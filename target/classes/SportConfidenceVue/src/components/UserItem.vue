@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div v-if="deleteInfo" class="alert alert-warning">
+    <div v-if="deleteInfo" class="alert alert-warning wow animated zoomInDown">
         <strong>User Deleted!</strong> {{deleteInfo}}
     </div>
 
@@ -37,8 +37,10 @@ export default {
 
     user: { type: Object, required:true }
   },
-  data:{
-    deleteInfo:null
+  data(){
+    return{
+      deleteInfo:null
+    }
   },
   methods:{
 

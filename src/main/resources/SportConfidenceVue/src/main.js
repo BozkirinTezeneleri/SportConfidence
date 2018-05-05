@@ -9,9 +9,6 @@ import App from './App.vue'
 //About us
 import AboutUs from './components/AboutUs.vue'
 Vue.component('about-us', AboutUs)
-//PlayerList
-import PlayerList from './components/PlayerList.vue'
-Vue.component('player-list', PlayerList)
 //PlayerProfile
 import PlayerProfile from './components/PlayerProfile.vue'
 Vue.component('player-profile', PlayerProfile)
@@ -44,17 +41,17 @@ Vue.component('contact-us', ContactUs)
 const router =new VueRouter({
 
   routes:[
-    { path: '/about_us', component : AboutUs, name : 'aboutUs'},
-    { path: '/players', component : PlayerList, name : 'playerList'},
-    { path :'/players/:playerId', component : PlayerProfile, name : 'playerProfile'},
-    { path: '/add_player', component : PlayerAdd, name : 'playerAdd'},
-    { path: '/users', component : UserList, name : 'userList'},
-    { path: '/add_user', component : UserAdd, name : 'userAdd'},
-    { path :'/users/:userId', component : UserProfile, name : 'userProfile'},
-    { path: '/players/edit/:playerId', component : EditPlayer, name : 'editPlayer'},
-    { path: '/users/edit/:userId', component : EditUser, name : 'editUser'},
-    { path: '/sport_clubs', component : SportClubs, name : 'sportClubs'},
-    { path: '/contact_us', component : ContactUs, name : 'contactUs'},
+    //{ path: '/about_us', component : AboutUs, name : 'aboutUs'},
+    //{ path: '/players', component : PlayerList, name : 'playerList'},
+    //{ path :'/sportClubs/:sportClubId/players/:playerId', component : PlayerProfile, name : 'playerProfile'},
+    //{ path: '/add_player', component : PlayerAdd, name : 'playerAdd'},
+    //{ path: '/users', component : UserList, name : 'userList'},
+    //{ path: '/add_user', component : UserAdd, name : 'userAdd'},
+    //{ path :'/users/:userId', component : UserProfile, name : 'userProfile'},
+    //{ path: '/players/edit/:playerId', component : EditPlayer, name : 'editPlayer'},
+    //{ path: '/users/edit/:userId', component : EditUser, name : 'editUser'},
+    //{ path: '/sport_clubs', component : SportClubs, name : 'sportClubs'},
+    //{ path: '/contact_us', component : ContactUs, name : 'contactUs'},
 
   ],
   mode :'history'

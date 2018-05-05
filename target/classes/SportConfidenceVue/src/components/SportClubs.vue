@@ -86,7 +86,7 @@
                                         <td>{{sportClubPlayer.position}}</td>
                                         <td>{{sportClubPlayer.height}}</td>
                                         <td>{{sportClubPlayer.weight}}</td>
-                                        <td style="color: rgb(32, 178, 170);">{{sportClubPlayer.disabilityState}}</td>
+                                        <td>{{sportClubPlayer.disabilityState}}</td>
                                         <td><button class="btn btn-primary send" @click="getPlayerProfile(sportClubPlayer.playerId)">SHOW PROFILE</button></td>
                                     </tr>
 
@@ -97,7 +97,7 @@
                 </div>
             </div>
 
-
+  
     <!-- <p v-model="yazi">{{yazi}}</p> -->
     <!-- Players -->
 	  <section id="player_list">

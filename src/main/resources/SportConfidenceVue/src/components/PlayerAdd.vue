@@ -15,7 +15,7 @@
 
       <div class="row main_content">
 
-        <div v-if="submitInfo" class="alert alert-success">
+        <div v-if="submitInfo" class="alert alert-success animated zoomInDown">
             <strong>Succesful Record!</strong> {{submitInfo}}
         </div>
 
@@ -43,21 +43,35 @@
 
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> Position
+                    </span>
+                  <select class="form-control" id="position" v-model="newPlayer.position" required>
+
+                    <option>Goalkeeper</option>
+                    <option>Defence</option>
+                    <option>Midfielder</option>
+                    <option>Striker</option>
+
+                  </select>
+                </div>
+
+                <div v-if="newPlayer.position" class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> BirthDate
                     </span>
                   <input class="form-control" type="date" id="birthDate" v-model="newPlayer.birthDate">
 
                 </div>
 
-                <div class="input-group margin-bottom-sm">
+                <div v-if="newPlayer.position" class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Weight (kg.)
                     </span>
                   <input class="form-control" type="range" step="0.1" min="40" max="120" id="weight" v-model="newPlayer.weight" placeholder="73.0" style="width:75%;">
-                  <input class="form-control" type="text" id="height" v-model.trim="newPlayer.weight" placeholder="73.0" style="width:25%;">
+                  <input class="form-control" type="text" id="weight" v-model.trim="newPlayer.weight" placeholder="73.0" style="width:25%;">
                 </div>
 
-                <div class="input-group margin-bottom-sm">
+                <div v-if="newPlayer.position" class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Height (cm.)
                     </span>
@@ -65,7 +79,7 @@
                   <input class="form-control" type="text" id="height" v-model.trim="newPlayer.height" placeholder="180.0" style="width:25%;">
                 </div>
 
-                <div class="input-group margin-bottom-sm">
+                <div v-if="newPlayer.position" class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Citizenship
                     </span>
@@ -76,42 +90,28 @@
                   </select>
                 </div>
 
-                <div class="input-group margin-bottom-sm">
-                    <span class="input-group-addon">
-                      <i class="fa fa-tags fa-fw"></i> Position
-                    </span>
-                  <select class="form-control" id="position" v-model="newPlayer.position">
-
-                    <option>Goalkeeper</option>
-                    <option>Defence</option>
-                    <option>Midfielder</option>
-                    <option>Striker</option>
-
-                  </select>
-                </div>
-
-                <div class="input-group margin-bottom-sm">
+                <div v-if="newPlayer.height" class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i>Disability State
                     </span>
-                  <select class="form-control" id="disabilityState" v-model="newPlayer.disabilityState" >
+                  <select class="form-control" id="disabilityState" v-model="newPlayer.disabilityState" required>
                     <option>True</option>
                     <option>False</option>
                   </select>
                 </div>
 
-                <div class="input-group margin-bottom-sm">
+                <div v-if="newPlayer.disabilityState" class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
                       <i class="fa fa-comment-o fa-fw"></i>
                     </span>
-                  <textarea class="form-control" rows="6" type= "text"  v-model="newPlayer.disabilityInformation" placeholder="Enter Disability Information" required></textarea>
+                  <textarea class="form-control" id="disabilityInformation" rows="6" type= "text"  v-model="newPlayer.disabilityInformation" placeholder="Enter Disability Information" required></textarea>
                 </div>
 
-                <div class="input-group margin-bottom-sm">
+                <div v-if="newPlayer.disabilityState" class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Testimonial ($)
                     </span>
-                  <input class="form-control" type="text" v-model.trim="newPlayer.testimonial" placeholder="150.0 $">
+                  <input class="form-control" id="testimonial" type="text" v-model.trim="newPlayer.testimonial" placeholder="150.0 $" required>
                 </div>
 
                 <hr>
@@ -119,21 +119,9 @@
 
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
-                      <i class="fa fa-tags fa-fw"></i> Is he playing in a sport club?
-                    </span>
-                  <select class="form-control" id="country" v-model="isThereHisClub">
-
-                    <option value="true">Yes</option>
-                    <option value="false">No</option>
-
-                  </select>
-                </div>
-
-                <div v-if="isThereHisClub" class="input-group margin-bottom-sm">
-                    <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Country
                     </span>
-                  <select class="form-control" id="country" v-model="selectedCountryId" :onchange="getLeagues(selectedCountryId)">
+                  <select class="form-control" id="country" v-model="selectedCountryId" v-on:change="getLeagues(selectedCountryId)" required>
 
                     <option v-for="country in countries" :value="country.countryId"> {{country.countryName}} </option>
 
@@ -143,7 +131,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> League
                     </span>
-                  <select class="form-control" id="league" v-model="selectedLeagueId" :onchange="getSportClubs(selectedLeagueId)">
+                  <select class="form-control" id="league" v-model="selectedLeagueId" v-on:change="getSportClubs(selectedLeagueId)" required>
 
                     <option v-for="league in leagues" :value="league.leagueId"> {{league.leagueName}} </option>
 
@@ -153,7 +141,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Sport Club
                     </span>
-                  <select class="form-control" id="sportClub" v-model="newPlayer.sportClub.sportClubId">
+                  <select class="form-control" id="sportClub" v-model="newPlayer.sportClub.sportClubId" required>
 
                     <option v-for="sportclub in sportclubs" :value="sportclub.sportClubId"> {{sportclub.name}} </option>
 
@@ -164,20 +152,20 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Contract Time Start
                     </span>
-                  <input class="form-control" type="date" id="contractTimeStart" v-model="newPlayer.contractTimeStart">
+                  <input class="form-control" type="date" id="contractTimeStart" v-model="newPlayer.contractTimeStart" required>
 
                 </div>
 
-                <div v-if="selectedLeagueId" class="input-group margin-bottom-sm">
+                <div v-if="newPlayer.contractTimeStart" class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Contract Time End
                     </span>
-                  <input class="form-control" type="date" id="contractTimeEnd" v-model="newPlayer.contractTimeEnd">
+                  <input class="form-control" type="date" id="contractTimeEnd" v-model="newPlayer.contractTimeEnd" required>
 
                 </div>
-                <hr>
+                <hr v-if="newPlayer.contractTimeEnd">
 
-                <button class="btn btn-primary send" type="submit">ADD NEW PLAYER</button>
+                <button v-if="newPlayer.contractTimeEnd" class="btn btn-primary send" type="submit">ADD NEW PLAYER</button>
               </div>
             </form>
 
@@ -223,12 +211,12 @@ export default {
         contractTimeEnd:'',
         testimonial:'',
         country:{
-          countryId:0,
+          countryId:1,
           //id:90,
           //countryName:'turkey'
         },
         sportClub:{
-          sportClubId:0,
+          sportClubId:1,
           /*name:'fb',
           league:{
             leagueId:1,
@@ -244,8 +232,6 @@ export default {
       },
       submitData: null,
       submitInfo:null,
-
-      isThereHisClub:false,
 
       countries:{},
       selectedCountryId:null,

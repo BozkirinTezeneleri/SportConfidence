@@ -14,13 +14,13 @@
 					    	</div>
 	    					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      					<ul class="nav navbar-nav navbar-right">
-		      						<li><router-link href="#about_us" to="/about_us">About Us</router-link></li>
-		      						<li><router-link href="#user_list" to="/users">User List</router-link></li>
-		        					<li><router-link href="#add_user" to="/add_user">Add New User</router-link></li>
-                      <li><router-link href="#sport_clubs" to="/sport_clubs">Sport Clubs</router-link></li>
-                      <li><router-link href="#player_list" to="/players">Non-Club Player List</router-link></li>
-		        					<li><router-link href="#add_player" to="/add_player">Add New Player</router-link></li>
-		        					<li><router-link href="#contact_us" to="/contact_us">Contact Us</router-link></li>
+		      						<li><a href="#about_us">About Us</a></li>
+                      <li><a href="#sport_clubs">Sport Clubs</a></li>
+		        					<li><a href="#add_player">Add New Player</a></li>
+                      <li><a href="#user_list">User List</a></li>
+		        					<li><a href="#add_user">User Register</a></li>
+		        					<li><a href="#contact_us">Contact Us</a></li>
+
 							    </ul>
 	    					</div>	<!-- collapse navbar-collapse -->
 	  					</div>	<!-- container-fluid -->
@@ -45,18 +45,6 @@
 
 		</section>	<!-- about us -->
 
-		<!-- User List -->
-		<section id="user_list">
-			<user-list></user-list>
-		</section>	<!-- our_service -->
-
-		<!-- Add User -->
-	  <section id="add_user">
-
-        <user-add></user-add>
-
-	  </section>	<!-- team -->
-
 		<!-- Sport Clubs -->
 	  <section id="sport_clubs">
 
@@ -65,15 +53,6 @@
 	    </section>	<!-- sport-clubs -->
     <br><br>
 
-		<!-- Players -->
-	  <section id="player_list">
-
-        <player-list></player-list>
-
-	  </section><!-- players -->
-
-
-
     <!-- Add New Player -->
     <section id="add_player">
 
@@ -81,6 +60,19 @@
 
         </section>  <!-- add new player -->
 
+    <!-- User List -->
+    <section id="user_list">
+
+    	 <user-list></user-list>
+
+    </section>	<!-- user-list -->
+
+    <!-- Add User -->
+    <section id="add_user">
+
+        <user-add></user-add>
+
+    </section>	<!-- add-user -->
 
 		<!-- contact -->
 	  <section id= "contact_us">
@@ -113,7 +105,3 @@ export default {
 
 }
 </script>
-
-<style>
-
-</style>

@@ -5,7 +5,7 @@
       <div class="row text-center" id="heading">
         <div class="col-md-6 col-md-offset-3 wow animated zoomInDown" id="heading-text">
             <h3>Add User</h3>
-                <p>Add New User Information</p>
+                <p>Enter New User Information</p>
                 <hr class="full">
                 <br/>
           </div>
@@ -13,7 +13,7 @@
 
       <div class="row main_content">
 
-        <div v-if="submitInfo" class="alert alert-success">
+        <div v-if="submitInfo" class="alert alert-success animated zoomInDown">
             <strong>Succesful Record!</strong> {{submitInfo}}
         </div>
 
@@ -26,7 +26,7 @@
               <div class= "form">
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
-                      <i class="fa fa-user fa-fw"></i>
+                      <b>@</b>
                     </span>
                   <input class="form-control" type="text" id="username" v-model.trim="newUser.username" placeholder="Username" required>
                 </div>
@@ -49,19 +49,19 @@
                     <span class="input-group-addon">
                       <i class="fa fa-envelope-o fa-fw"></i>
                     </span>
-                  <input class="form-control" type="email" id="email" v-model.trim="newUser.email" placeholder="Email address(example@example.com)" required>
+                  <input class="form-control" type="email" id="email" v-model.trim="newUser.email" placeholder="example@example.com" required>
                 </div>
 
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
-                      <i class="fa fa-user fa-fw"></i>
+                      <i class="fa fa-lock fa-fw"></i>
                     </span>
-                  <input class="form-control" type="password" id="password" v-model="newUser.password" placeholder="Enter Password(Please enter min 6 chracter...)" minlength="6" required>
+                  <input class="form-control" type="password" id="password" v-model="newUser.password" placeholder="Please enter min 6 chracter..." minlength="6" required>
                 </div>
 
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon">
-                      <i class="fa fa-user fa-fw"></i> Phone Number
+                      <i class="fa fa-phone fa-fw"></i>
                     </span>
                   <input class="form-control" type="text" id="phone" v-model="newUser.phone" placeholder="Please, enter 11 character..." minlength="11" maxlength="11" required>
                 </div>
@@ -70,7 +70,7 @@
                     <span class="input-group-addon">
                       <i class="fa fa-tags fa-fw"></i> Role
                     </span>
-                  <select class="form-control" id="role" v-model="newUser.role">
+                  <select class="form-control" id="role" v-model="newUser.role" required>
                     <option>ADMIN</option>
                     <option>DOCTOR</option>
                     <option>MANAGER</option>
@@ -87,13 +87,8 @@
 
       </div> <!-- row main_content -->
 
-
-
     </div>	<!-- team-members -->
    </div>	<!-- container -->
-
-
-
 
 </template>
 
@@ -123,6 +118,7 @@ export default {
 
     created(){
       console.log("RUNNING INFORMATION : UserAdd is running...")
+
     },
 
     addUser(){

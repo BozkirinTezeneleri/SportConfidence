@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sport-Test</title>
+
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+
+  </head>
+  <body>
+
+    <div>
+      <h2>NEW PLAYER INFORMATION</h2>
+      <hr>
+      <form id="PlayerAdd">
+        <div>
+          <label for="name">Name :</label>
+          <input type="text" id="name" >
+        </div>
+        <div>
+          <label for="surname">Surname :</label>
+          <input type="text" id="surname" >
+        </div>
+        <div>
+          <label for="birthDate">BirthDate :</label>
+          <input type="date" id="birthDate"  placeholder="DD-MM-YYYY">
+        </div>
+
+        <div>
+          <label for="weight">Weight :</label>
+          <input type="text" step="0.1" min="40" max="120" id="weight"  placeholder="73.0">
+          <input type="text" id="weight" placeholder="73.0" style="width:5%;">
+          <label for="weight">kg.</label>
+        </div>
+
+        <div>
+          <label for="height">Height :</label>
+          <input type="text" step="0.1" min="100" max="210" id="height" placeholder="180.0">
+          <input type="text" id="height"placeholder="180.0" style="width:5%;">
+          <label for="height">cm.</label>
+        </div>
+
+        <div>
+          <label for="contractTimeStart">Contract Time Start :</label>
+          <input type="date" id="contractTimeStart" placeholder="DD-MM-YYYY">
+        </div>
+
+        <div>
+          <label for="contractTimeEnd">Contract Time End :</label>
+          <input type="date" id="contractTimeEnd" placeholder="DD-MM-YYYY">
+        </div>
+
+
+        <div>
+          <label for="disabilityState">Disability State :</label>
+          <select class="" id="disabilityState" >
+            <option value="1">true</option>
+            <option value="0">false</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="testimonial">Testimonial :</label>
+          <input type="text" id="testimonial"  placeholder="150.0" style="width:20%;">
+          <label for="testimonial">$</label>
+        </div>
+        <hr>
+
+
+        <button id="button">SAVE</button>
+        <hr>
+
+
+        <img id="loader"  style="display:none ; width:100px; height:100px;" src="https://loading.io/spinners/azure/index.azure-round-loader.gif">
+			  <h2 id="instructor" style="background-color:lightblue; weight:50px; height:50px"></h2>
+
+
+      </form>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <script>
+
+    var  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    web3.eth.defaultAccount=web3.eth.accounts[0];
+    var PlayerContract = web3.eth.contract([
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPlayer",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"name": "_surname",
+				"type": "string"
+			},
+			{
+				"name": "_birthDate",
+				"type": "string"
+			},
+			{
+				"name": "_height",
+				"type": "uint256"
+			},
+			{
+				"name": "_weight",
+				"type": "uint256"
+			},
+			{
+				"name": "_contractTimeEnd",
+				"type": "string"
+			},
+			{
+				"name": "_contractTimeStart",
+				"type": "string"
+			},
+			{
+				"name": "_disabilityState",
+				"type": "bool"
+			},
+			{
+				"name": "_testimonial",
+				"type": "uint256"
+			}
+		],
+		"name": "setPlayer",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "ename",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "esurname",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "ebirthDate",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "eheight",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "eweight",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "econtractTimeEnd",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "econtractTimeStart",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "edisabilityState",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"name": "etestimonial",
+				"type": "uint256"
+			}
+		],
+		"name": "PlayerEvent",
+		"type": "event"
+	}
+]);
+    var player = PlayerContract.at('0x263945d867ac7021166179b88f4d6dcffda9bd36');
+    var button = document.getElementById('button');
+	  var playerEvent = player.PlayerEvent();
+    console.log(playerEvent);
+
+  playerEvent.watch(function(error,result) {
+    if(!error){
+      $("#loader").hide();
+      $("#instructor").html(result.args.ename + '/' + result.args.esurname + '/' + result.args.ebirthDate + '/' + result.args.eheight + '/' +result.args.eweight + '/' + result.args.econtractTimeEnd + '/' + result.args.econtractTimeStart);
+    }else{
+      $("#loader").hide();
+      console.log(error);
+    }});
+
+
+
+  /*  player.getPlayer(function(error,result){
+      if(!error){
+        $("#instructor").html(result[0]+ '/' + result[1]+ '/' + result[2]+ '/' + result[3]+ '/' + result[4]+ '/' + result[5]+ '/' + result[6]+ '/' + result[7]+ '/' + result[8]);
+      }
+      else { console.log(error); }
+    });
+ */
+
+/*
+   button.addEventListener('click', function(){
+      player.setPlayer(
+        $("#name").val(),
+        $("#surname").val(),
+        $("#birthDate").val(),
+        $("#height").val(),
+        $("#weight").val(),
+        $("#contractTimeStart").val(),
+        $("#contractTimeEnd").val(),
+        $("#disabilityState").val(),
+        //$("#disabilityInformation").val(),
+        $("#testimonial").val(),
+
+        console.log("calıştı")
+      );
+      $("#loader").show();
+
+
+    },function(err){
+      $("#loader").show();
+      console.error(err);
+    });*/
+
+  $("#button").click(function() {
+          player.setPlayer(
+              $("#name").val(),
+              $("#surname").val(),
+              $("#birthDate").val(),
+              $("#height").val(),
+              $("#weight").val(),
+              $("#contractTimeStart").val(),
+              $("#contractTimeEnd").val(),
+              //$("#country").val(),
+              //$("#sportClub").val(),
+              $("#disabilityState").val(),
+              $("#disabilityInformation").val(),
+              $("#testimonial").val(),
+            );
+            $("#loader").show();
+        });
+    </script>
+
+  </body>
+</html>
