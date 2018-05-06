@@ -1,5 +1,5 @@
 # SportConfidence
-# Web Based Sport Confidence Platform with Blockchain Ethereum Technology *( Blockchain-Ethereum Teknolojisi Kullanılarak Sporda Güven Platformu )*
+## Web Based Sport Confidence Platform with Blockchain Ethereum Technology *( Blockchain-Ethereum Teknolojisi Kullanılarak Sporda Güven Platformu )*
 
 Spor hayatına aktif olarak devam eden sporcuların güncel ve geçmiş verilerini hizmet verdikleri veya verecekleri kurumlarla güvenli bir şekilde paylaşımını ve takibini sağlayan; böylece güvenli bir şekilde para transferlerinin gerçekleşmesine zemin hazırlayan uygulamadır.
 
