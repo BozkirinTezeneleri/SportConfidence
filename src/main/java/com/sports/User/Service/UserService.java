@@ -70,6 +70,25 @@ public class UserService implements UserServiceImpl,UserDetailsService{
         return userRepository.findByUsername(name);
     }
 
+    @Override
+    public User getLoginUserInformation(String username, String password) {
+        Optional<User> userOptional = userRepository.findByUsername(username);
+
+        if (!userOptional.isPresent()) {
+            return null;
+        }
+
+        else {
+            String storedBcryptPassword,storedUsername;
+            storedBcryptPassword = userOptional.get().getPassword();
+            storedUsername = userOptional.get().getUsername();
+            if(passwordEncoder.matches(password,storedBcryptPassword) && username.equals(storedUsername)){
+                return userOptional.get();
+            }
+            else return null;
+        }
+    }
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

@@ -6,6 +6,8 @@ import com.sports.League.Entities.League;
 import com.sports.League.Service.LeagueService;
 import com.sports.SportClub.Entities.SportClub;
 import com.sports.SportClub.Service.SportClubService;
+import com.sports.User.Model.User;
+import com.sports.User.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +26,14 @@ public class GeneralController {
     LeagueService leagueService;
     @Autowired
     SportClubService sportClubService;
+    @Autowired
+    UserService userService;
+
+    @GetMapping("/login/{username}/{password}")
+    @ResponseStatus(HttpStatus.OK)
+    public User getUserInformation(@PathVariable String username, @PathVariable String password){
+        return userService.getLoginUserInformation(username,password);
+    }
 
 
     @GetMapping("/countries")

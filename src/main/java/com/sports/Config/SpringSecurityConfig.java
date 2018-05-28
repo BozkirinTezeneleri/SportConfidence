@@ -51,6 +51,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers( "/leagues/**").permitAll()
                 .antMatchers( "/sportclubs").permitAll()
                 .antMatchers( "/sportclubs/**").permitAll()
+                .antMatchers("/login").permitAll()
 
 //                .antMatchers(HttpMethod.POST, "/users").hasAuthority("ADMIN")
 //                .antMatchers(HttpMethod.PUT, "/users/**").hasAuthority("ADMIN")

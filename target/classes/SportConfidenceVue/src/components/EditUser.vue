@@ -1,61 +1,99 @@
 <template>
 
-  <div>
-    <h2>EDIT USER INFORMATION</h2>
+  <div class="container">
+    <div class="team-members">
+      <div class="row text-center" id="heading">
 
-    <hr>
-    <form v-if="!editData" v-on:submit.prevent="updateUser" id="EditUser" method="post">
-      <div>
-        <label for="name">Name :</label>
-        <input type="text" id="name" v-model="editUser.name">
+          <div class= "col-md-6 col-md-offset-3 wow animated zoomInDown" id= "heading-text">
+              <h3>Edit User</h3>
+                  <p>Enter New Information For This User</p>
+                  <hr class= "full">
+                  <br/>
+          </div>
+
       </div>
 
-      <div>
-        <label for="surname">Surname :</label>
-        <input type="text" id="surname" v-model="editUser.surname">
+      <div class="row main_content">
+
+        <div class= "row text-center main_content">
+
+          <div class= "col-md-6 col-md-offset-3 text-center">
+
+            <form v-on:submit.prevent="updateUser(editUserInfo.userId)" id="EditUser" method="post" action="#">
+              <div class= "form">
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <b>@</b>
+                    </span>
+                  <input class="form-control" type="text" id="username" v-model.trim="editUserInfo.username" placeholder="Username" required>
+                </div>
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-user fa-fw"></i>
+                    </span>
+                  <input class="form-control" type="text" id="name" v-model.trim="editUserInfo.name" placeholder="Name" required>
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-user fa-fw"></i>
+                    </span>
+                  <input class="form-control" type="text" id="surname" v-model.trim="editUserInfo.surname" placeholder="Surname" required>
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-envelope-o fa-fw"></i>
+                    </span>
+                  <input class="form-control" id="email" type="email" v-model.trim="editUserInfo.email" placeholder="example@example.com" required>
+                </div>
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-lock fa-fw"></i>
+                    </span>
+                  <input class="form-control" id="password" type="password" v-model.trim="editUser.password" placeholder="Please enter min 6 chracter..." minlength="6" required>
+                </div>
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-phone fa-fw"></i>
+                    </span>
+                  <input class="form-control" id="phone" type="phone" v-model.trim="editUserInfo.phone" placeholder="Please, enter 11 character..." minlength="11" maxlength="11" required>
+                </div>
+
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon">
+                      <i class="fa fa-tags fa-fw"></i> Role
+                    </span>
+                  <select class="form-control" id="role" v-model="editUserInfo.role" required>
+                    <option>ADMIN</option>
+                    <option>DOCTOR</option>
+                    <option>MANAGER</option>
+                  </select>
+                </div>
+                <hr>
+
+                <button class="btn btn-primary send" type="submit">UPDATE INFORMATIONS</button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+
       </div>
 
-      <div>
-        <label for="email">Email :</label>
-        <input type="email" id="email" v-model="editUser.email" placeholder="example@example.com">
-      </div>
-
-      <div>
-        <label for="password">Password :</label>
-        <input type="password" id="password" v-model="editUser.password" placeholder="Please enter min 6 chracter..." minlength="6">
-      </div>
-
-      <div>
-        <label for="phone">Phone Number :</label>
-        <input type="text" id="phone" v-model="editUser.phone" placeholder="Please, enter 11 character..." minlength="11" maxlength="11">
-      </div>
-
-      <div>
-        <label for="role">Role :</label>
-        <select class="" id="role" v-model="editUser.role">
-          <option>ADMIN</option>
-          <option>DOCTOR</option>
-          <option>MANAGER</option>
-        </select>
-      </div>
-
-      <hr>
-      <p v-if="editData">{{editData}}</p>
-      <hr>
-
-      <button type="submit">UPDATE</button>
-      <button @click="goBack">Go Back to User List</button>
-      <hr>
-
-    </form>
-    <div v-if="editInfo">
-      <center>
-        <b><p>{{editInfo}}</p></b>
-        <button @click="goBack">Go Back to User List</button>
-      </center>
+    </div>	<!-- team-members -->
+    <br>
+    <div v-if="editInfo" class="alert alert-info animated zoomInDown">
+        <strong>Succesful Update!</strong> {{editInfo}}
     </div>
 
-  </div>
+
+  </div>	<!-- container -->
+
+
 </template>
 
 <script>
@@ -63,77 +101,85 @@
 export default {
   name: 'EditUser',
 
+  props:{
+
+    editUserInfo: { type: Object, required:true }
+
+  },
+
   data(){
     return{
       editUser:{
-        name:null,
-        surname:null,
+        username: null,
+        name: null,
+        surname: null,
+        role:null,
         email:null,
         password:null,
         phone:null,
-        role:null
-
       },
+
       editData: null,
-      editInfo:null
+      editInfo:null,
+
     }
   },
 
   created(){
-    this.getUser();
+
+    console.log("INFO : EditUser Running...");
   },
 
   methods:{
 
-    getUser(){
-      //console.log("RUNNING INFORMATION : GetUser is running for All Users...");
+    updateUser(userId){
 
-      var url = `http://localhost:8080/users/${this.$route.params.userId}`;
-      this.$http.get(url).then(function (resp) {
-        //console.log(resp.status);
-        if (resp.status == 200) {
-          console.log("INFO : Accepted All User and Added UserList...");
+      this.editUser.username=this.editUserInfo.username;
+      this.editUser.name=this.editUserInfo.name;
+      this.editUser.surname=this.editUserInfo.surname;
+      this.editUser.role=this.editUserInfo.role;
+      this.editUser.email=this.editUserInfo.email;
+      this.editUser.password=this.editUserInfo.password;
+      this.editUser.phone=this.editUserInfo.phone;
 
-          this.editUser = resp.data;
-        }
-      });
-    },
 
-    goBack(){
-
-        this.$router.push({ name : 'userList' })//syfa yonlendirme
-
-    },
-    updateUser:function(){
       this.editData = JSON.stringify(this.editUser);
+
+      //console.log(this.editData);
+
       console.log("RUNNING INFORMATION : UpdateUser is running...");
 
-      var url=`http://localhost:8080/users/${this.$route.params.userId}`;
+      var url = `http://localhost:8080/users/`+userId;
 
-      ///////////////////// START- VueResource-PUT //////////
-
-      this.$http.put(url, this.editData).then(function(resp) {
+      //////////// START-VueResource-PUT ////////////////////
+       this.$http.put(url, this.editData).then(function(resp) {
 
           //console.log(resp.status);
           //console.log(resp.data);
 
          if (resp.status == 202) {
 
-            console.log("INFO : " + url + "- SUCCESSFUL PUT(UPDATE) Operation for USER...")
-            this.editUser.name=null
-            this.editUser.surname=null
-            this.editUser.email=null
-            this.editUser.password=null
-            this.editUser.phone=null
-            this.editUser.role=null
-            this.editInfo='...Succesful Update Operation for This User...'
+            console.log("INFO : " +url + "- SUCCESSFUL PUT(UPDATE) Operation for This PLAYER...");
+
+            this.editUser.username=null;
+            this.editUser.name=null;
+            this.editUser.surname=null;
+            this.editUser.role=null;
+            this.editUser.email=null;
+            this.editUser.password=null;
+            this.editUser.phone=null;
+
+             this.editInfo='...Succesful Update Operation for This User...'
+
          }
        },function(error){
           console.error(error);
+       })
+         .catch((err)=>console.error(err))
+      //////////// END-VueResource-PUT ////////////////////
+    },
 
-       });
-       //////////////////// END-VueResource-PUT/////////////
-    }
-  }
+  },
+
 }
 </script>
