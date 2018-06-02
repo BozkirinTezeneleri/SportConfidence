@@ -1,0 +1,10 @@
+-Player ve user için resim eklenecek
+
+-calışma mantığı :
+  * sadece admin user ekleyecek...cunku kayıt işlemi public olursa kişinin rol ve kayıt onayı mekanizması gerekli hale gelecek...
+    üye olmak isteyen adminlerle irtibat kurmalı...
+  * headerInfo bilgisi, password bcrypt ile şifreli oladuğu icin direk olarak from elemanlarından gönderildi.
+
+
+
+

@@ -1,0 +1,43 @@
+{
+
+  "playerId":8,
+  "name":"Eray",
+  "surname":"Yıldırım",
+  "birthDate":"2018-04-02",
+  "weight":83.8,
+  "position":"Midfielder",
+  "contractTimeEnd":"2018-04-22",
+  "contractTimeStart":"2018-04-03",
+
+  "country":{
+
+      "countryId":2,
+      "countryName":"England"
+      },
+
+  "sportClub":{
+
+      "sportClubId":1,
+      "name":"Fenerbahçe",
+
+      "league":{
+
+          "leagueId":1,
+          "leagueName":"Turkish Super League",
+
+          "country":{
+
+              "countryId":1,
+              "countryName":"Turkey"
+
+            }
+        },
+
+        "insignia":""
+    },
+
+    "disabilityInformation":"eee",
+    "disabilityState":true,
+    "testimonial":88.8,
+    "height":170.6
+  }

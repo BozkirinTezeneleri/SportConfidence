@@ -16,4 +16,6 @@ public interface UserServiceImpl {
     public Optional<User> getUserById(Integer id);
     public List<User> findAllUsers();
     public Optional<User> getUserByName(String username);
+
+    User getLoginUserInformation(String username, String password);
 }

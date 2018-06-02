@@ -76,7 +76,7 @@
                                         <td>
                                           <div class="row wow animated zoomIn" data-wow-delay="0.1s">
 
-                                              <img class="img-circle img-responsive center-block" style="height:50px;" src="src/assets/img/Syed-Rezwanul-Haque.jpg">
+                                              <img class="img-circle img-responsive center-block" style="height:50px;" src="src/assets/img/player.png">
 
                                           </div>
                                         </td>
@@ -97,12 +97,11 @@
                 </div>
             </div>
 
-
     <!-- <p v-model="yazi">{{yazi}}</p> -->
     <!-- Players -->
 	  <section id="player_list">
 
-        <player-profile v-if="selectedClubPlayerId" :selectedPlayer=selectedClubPlayer></player-profile>
+        <player-profile v-if="selectedClubPlayerId" :selectedPlayer=selectedClubPlayer :headerInfo=headerInfo :session=session></player-profile>
 
 	  </section><!-- players -->
   </div>	<!-- container -->
@@ -113,6 +112,11 @@
 export default {
 
   name: 'SportClubs',
+
+  props:{
+    headerInfo:null,
+    session:null
+  },
 
   data(){
     return{
@@ -129,6 +133,8 @@ export default {
       selectedClubPlayer:{},
       selectedClubPlayerId:null,
 
+      headerInfoAuth:this.headerInfo,
+
     }
   },
 
@@ -139,9 +145,19 @@ export default {
 
       console.log("RUNNING INFORMATION : FetchData is running for selected Player...");
 
-      fetch(`http://localhost:8080/players/`+playerId)//istek
-      .then((res) => {return res.json()})//response json a cevrildi
-      .then((player) => { this.selectedClubPlayer=player;})
+      var url=`http://localhost:8080/players/`+playerId;
+
+      this.$http.get(url,
+      {
+        headers:{
+
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic '+btoa(this.headerInfoAuth.username+ ':'+ this.headerInfoAuth.password)
+        }
+      }).then(function (resp) {
+        this.selectedClubPlayer=resp.data;
+      });
+
     },
 
     getCountries(){
@@ -149,13 +165,24 @@ export default {
       console.log("RUNNING INFORMATION : GetCountries is running for All Country...");
 
       var url = 'http://localhost:8080/countries';
-      this.$http.get(url).then(function (resp) {
-        //console.log(resp.status);
+
+      this.$http.get(url,
+      {
+        headers:{
+
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic '+btoa(this.headerInfoAuth.username+ ':'+ this.headerInfoAuth.password)
+        }
+      }
+
+      ).then(function (resp) {
+        //console.log(resp);
         if (resp.status == 200) {
-          console.log("INFO : Accepted All Country and Added Countries...");
+            console.log("INFO : Accepted All Country and Added Countries...");
 
-          this.countries = resp.data;
-
+            this.countries = resp.data;
+            cosole.log("*****************")
+            console.log(JSON.stringify(this.countries))
         }
       });
     },
@@ -165,7 +192,15 @@ export default {
       console.log("RUNNING INFORMATION : GetLeagues is running for Selected Country...");
 
       var url = 'http://localhost:8080/leagues/country/'+countryId;
-      this.$http.get(url).then(function (resp) {
+      this.$http.get(url, {
+
+        headers:{
+
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic '+btoa(this.headerInfoAuth.username+ ':'+ this.headerInfoAuth.password)
+        }
+
+      }).then(function (resp) {
         //console.log(resp.status);
         if (resp.status == 200) {
           console.log("INFO : Accepted All Leagues for Selected Country...");
@@ -181,7 +216,15 @@ export default {
       console.log("RUNNING INFORMATION : GetSportClubs is running for Selected League...");
 
       var url = 'http://localhost:8080/sportclubs/league/'+leagueId;
-      this.$http.get(url).then(function (resp) {
+      this.$http.get(url, {
+
+        headers:{
+
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic '+btoa(this.headerInfoAuth.username+ ':'+ this.headerInfoAuth.password)
+        }
+
+      }).then(function (resp) {
         //console.log(resp.status);
         if (resp.status == 200) {
           console.log("INFO : Accepted All SportClub and Added SportClubs for Selected Leagues...");
@@ -197,7 +240,15 @@ export default {
       console.log("RUNNING INFORMATION : GetSportClubs is running for Selected League...");
 
       var url = 'http://localhost:8080/players/sportclub/'+clubId;
-      this.$http.get(url).then(function (resp) {
+      this.$http.get(url, {
+
+        headers:{
+
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic '+btoa(this.headerInfoAuth.username+ ':'+ this.headerInfoAuth.password)
+        }
+
+      }).then(function (resp) {
         //console.log(resp.status);
         if (resp.status == 200) {
           console.log("INFO : Accepted All Player and Added Players for Selected SportClub...");
