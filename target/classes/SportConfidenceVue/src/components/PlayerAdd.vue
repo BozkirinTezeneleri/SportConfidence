@@ -196,6 +196,13 @@
 export default {
   name: 'PlayerAdd',
 
+  props:{
+
+    headerInfo:null,
+    session:null
+
+  },
+
   data(){
     return{
       newPlayer:{
@@ -240,7 +247,9 @@ export default {
       selectedLeagueId:null,
 
       sportclubs:{},
-      selectedClubId:null
+      selectedClubId:null,
+
+      headerInfoAuth:this.headerInfo
     }
   },
 
@@ -257,7 +266,8 @@ export default {
       fetch(url, {
         method: 'POST',
         headers: {
-          "Content-type": "application/json"
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic '+btoa(this.headerInfoAuth.username+ ':'+ this.headerInfoAuth.password)
         },
 
         body:this.submitData
@@ -293,7 +303,15 @@ export default {
       console.log("RUNNING INFORMATION : GetUser is running for All Users...");
 
       var url = 'http://localhost:8080/countries';
-      this.$http.get(url).then(function (resp) {
+      this.$http.get(url,
+        {
+          headers:{
+
+            'Content-Type': 'application/json',
+            'Authorization': 'Basic '+btoa(this.headerInfoAuth.username+ ':'+ this.headerInfoAuth.password)
+          }
+        }
+      ).then(function (resp) {
         //console.log(resp.status);
         if (resp.status == 200) {
           console.log("INFO : Accepted All User and Added Countries...");
@@ -309,7 +327,15 @@ export default {
       console.log("RUNNING INFORMATION : GetLeagues is running for Selected Country...");
 
       var url = 'http://localhost:8080/leagues/country/'+countryId;
-      this.$http.get(url).then(function (resp) {
+      this.$http.get(url,
+        {
+          headers:{
+
+            'Content-Type': 'application/json',
+            'Authorization': 'Basic '+btoa(this.headerInfoAuth.username+ ':'+ this.headerInfoAuth.password)
+          }
+        }
+      ).then(function (resp) {
         //console.log(resp.status);
         if (resp.status == 200) {
           console.log("INFO : Accepted All User and Added Leagues for Selected Country...");
@@ -325,7 +351,15 @@ export default {
       console.log("RUNNING INFORMATION : GetSportClubs is running for Selected League...");
 
       var url = 'http://localhost:8080/sportclubs/league/'+leagueId;
-      this.$http.get(url).then(function (resp) {
+      this.$http.get(url,
+        {
+          headers:{
+
+            'Content-Type': 'application/json',
+            'Authorization': 'Basic '+btoa(this.headerInfoAuth.username+ ':'+ this.headerInfoAuth.password)
+          }
+        }
+      ).then(function (resp) {
         //console.log(resp.status);
         if (resp.status == 200) {
           console.log("INFO : Accepted All User and Added SportClubs for Selected Leagues...");
