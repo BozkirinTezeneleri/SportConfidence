@@ -80,24 +80,19 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.OPTIONS, "/sportclubs/**").permitAll()
 
 
+
+
 //                .antMatchers( "/users").permitAll()
 //                .antMatchers( "/users/**").permitAll()
 //                .antMatchers( "/players").permitAll()
 //                .antMatchers( "/players/**").permitAll()
-
-
-
-                .antMatchers( "/users").permitAll()
-                .antMatchers( "/users/**").permitAll()
-                .antMatchers( "/players").permitAll()
-                .antMatchers( "/players/**").permitAll()
-                .antMatchers( "/countries").permitAll()
-                .antMatchers( "/countries/**").permitAll()
-                .antMatchers( "/leagues").permitAll()
-                .antMatchers( "/leagues/**").permitAll()
-                .antMatchers( "/sportclubs").permitAll()
-                .antMatchers( "/sportclubs/**").permitAll()
-                .antMatchers("/login").permitAll()
+//                .antMatchers( "/countries").permitAll()
+//                .antMatchers( "/countries/**").permitAll()
+//                .antMatchers( "/leagues").permitAll()
+//                .antMatchers( "/leagues/**").permitAll()
+//                .antMatchers( "/sportclubs").permitAll()
+//                .antMatchers( "/sportclubs/**").permitAll()
+//                .antMatchers("/login").permitAll()
 
 //                .antMatchers(HttpMethod.POST, "/users").hasAuthority("ADMIN")
 //                .antMatchers(HttpMethod.PUT, "/users/**").hasAuthority("ADMIN")
