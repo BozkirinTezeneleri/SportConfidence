@@ -103,7 +103,9 @@ export default {
 
   props:{
 
-    editUserInfo: { type: Object, required:true }
+    editUserInfo: { type: Object, required:true },
+    headerInfo:null,
+    session:null
 
   },
 
@@ -121,6 +123,8 @@ export default {
 
       editData: null,
       editInfo:null,
+
+      headerInfoAuth:this.headerInfo,
 
     }
   },
@@ -152,7 +156,16 @@ export default {
       var url = `http://localhost:8080/users/`+userId;
 
       //////////// START-VueResource-PUT ////////////////////
-       this.$http.put(url, this.editData).then(function(resp) {
+       this.$http.put(url, this.editData,{
+
+         headers:{
+
+           'Content-Type': 'application/json',
+           'Authorization': 'Basic '+btoa(this.headerInfoAuth.username+ ':'+ this.headerInfoAuth.password)
+         }
+       }
+
+       ).then(function(resp) {
 
           //console.log(resp.status);
           //console.log(resp.data);

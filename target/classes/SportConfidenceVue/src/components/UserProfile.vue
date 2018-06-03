@@ -17,7 +17,7 @@
           <div class="col-md-4 col-sm-5 text-center" style="margin-left:180px;">
             <div class="row wow animated zoomIn" data-wow-delay="0.1s">
               <div class="col-md-8 col-md-offset-2">
-                <img class="img-circle img-responsive center-block" src="src/assets/img/Syed-Rezwanul-Haque.jpg" alt="Syed Rezwanul Haque Rubel">
+                <img class="img-circle img-responsive center-block" src="src/assets/img/user.png" alt="Syed Rezwanul Haque Rubel">
               </div>
             </div>
             <h4 class="wow animated fadeInUp" data-wow-delay= "0.2s" style="color: rgb(32, 178, 170);">
@@ -49,7 +49,7 @@
 
             </div>
           </div>
-          <div class="col-md-5 col-sm-5" style="margin-top:40px;">
+          <div v-if="session.role==='ADMIN'" class="col-md-5 col-sm-5" style="margin-top:40px;">
             <div class= "row text-center wow animated fadeInDown" data-wow-delay= "0.5s">
               <div class= "team-member-contact">
                   <button class="btn btn-info" @click="editUserProfile(selectedUser.userId)">EDIT INFORMATION</button>
@@ -67,7 +67,7 @@
     <!-- Edit Users -->
 	  <section id="user_list">
 
-        <edit-user v-if="editUserId" :editUserInfo=editUser></edit-user>
+        <edit-user v-if="editUserId" :editUserInfo=editUser :headerInfo=headerInfo :session=session></edit-user>
 
 	  </section><!-- edit-users -->
 
@@ -84,7 +84,9 @@ export default {
 
   props:{
 
-    selectedUser: { type: Object, required:true }
+    selectedUser: { type: Object, required:true },
+    headerInfo: null,
+    session:null
 
   },
 
@@ -92,6 +94,7 @@ export default {
     return{
       editUser:{},
       editUserId:null,
+      headerInfoAuth:this.headerInfo,
     }
   },
   methods:{
@@ -101,9 +104,21 @@ export default {
 
       console.log("RUNNING INFORMATION : FetchData is running for selected User...");
 
-      fetch(`http://localhost:8080/users/`+UserId)//istek
-      .then((res) => {return res.json()})//response json a cevrildi
-      .then((user) => { this.editUser=user;})
+      var url=`http://localhost:8080/users/`+UserId;
+      this.$http.get(url,
+      {
+        headers:{
+
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic '+btoa(this.headerInfoAuth.username+ ':'+ this.headerInfoAuth.password)
+        }
+      }
+
+      ).then(function (resp) {
+        this.editUser=resp.data;
+
+      });
+
     },
 
    },

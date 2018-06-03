@@ -97,6 +97,11 @@
 export default {
   name: 'UserAdd',
 
+  props:{
+    headerInfo:null,
+    session:null
+  },
+
   data(){
     return{
       newUser:{
@@ -110,7 +115,8 @@ export default {
 
       },
       submitData: null,
-      submitInfo:null
+      submitInfo:null,
+      headerInfoAuth:this.headerInfo
     }
   },
 
@@ -132,7 +138,8 @@ export default {
       fetch(url, {
         method: 'POST',
         headers: {
-          "Content-type": "application/json"
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic '+btoa(this.headerInfoAuth.username+ ':'+ this.headerInfoAuth.password)
         },
 
         body:this.submitData
