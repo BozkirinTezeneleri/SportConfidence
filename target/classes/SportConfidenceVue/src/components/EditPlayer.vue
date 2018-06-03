@@ -226,6 +226,7 @@
                       <i class="fa fa-tags fa-fw"></i> Contract Time Start
                     </span>
                   <input class="form-control" type="date" id="contractTimeStart" v-model="editPlayerInfo.contractTimeStart" required>
+
                 </div>
                 <div v-if="session.role==='MANAGER'" class="input-group margin-bottom-sm">
                     <span class="input-group-addon">

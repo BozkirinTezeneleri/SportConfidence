@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="1bffb71b-3ab0-493c-ab90-256a9c1e3785" name="Default" comment="" />
+=======
+    <list default="true" id="0ca3afe9-bd64-4897-9d75-6317b7cda0f2" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sports/Config/SpringSecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/sports/Config/SpringSecurityConfig.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sports/GeneralControllers/GeneralController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sports/GeneralControllers/GeneralController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/EditPlayer.vue" afterPath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/EditPlayer.vue" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/EditUser.vue" afterPath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/EditUser.vue" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/PlayerAdd.vue" afterPath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/PlayerAdd.vue" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/PlayerProfile.vue" afterPath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/PlayerProfile.vue" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/SportClubs.vue" afterPath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/SportClubs.vue" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/UserAdd.vue" afterPath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/UserAdd.vue" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/UserList.vue" afterPath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/UserList.vue" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/UserProfile.vue" afterPath="$PROJECT_DIR$/target/classes/SportConfidenceVue/src/components/UserProfile.vue" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sports/GeneralControllers/GeneralController.class" afterPath="$PROJECT_DIR$/target/classes/com/sports/GeneralControllers/GeneralController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sports/User/Service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/sports/User/Service/UserService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sports/User/Service/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/sports/User/Service/UserServiceImpl.class" />
+    </list>
+>>>>>>> master
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -11,6 +32,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="SpringSecurityConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Config/SpringSecurityConfig.java">
@@ -47,36 +69,68 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
               <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="34" />
+=======
+    <leaf>
+      <file leaf-file-name="GeneralController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/GeneralControllers/GeneralController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="34" column="36" lean-forward="true" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+>>>>>>> master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1224">
               <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
+=======
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="19" column="67" lean-forward="false" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
+>>>>>>> master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Repository/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
               <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+=======
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="82" column="42" lean-forward="false" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
+>>>>>>> master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="UserRestController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Controller/UserRestController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="630">
               <caret line="53" column="19" lean-forward="false" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="34" />
+=======
+      <file leaf-file-name="SpringSecurityConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Config/SpringSecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="53" column="50" lean-forward="false" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+>>>>>>> master
               <folding />
             </state>
           </provider>
@@ -96,7 +150,28 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/sports/Config/SimpleCORSFilter.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/com/sports/Player/Model/Player.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/SportClub/Entities/SportClub.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/User/Repository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/GeneralRepo/T.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/GeneralRepo/GeneralRepos.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/GeneralRepo/CountryRepo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/Country/Service/CountryService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/GeneralRepos/LeagueRepo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/League/Repository/LeagueRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/League/Service/LeagueService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/Player/Service/PlayerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/Player/Repository/PlayerRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/Player/Controller/PlayerRestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/Player/Service/PlayerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/GeneralRepos/SportClubRepo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/SportClub/Service/SportClubService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/Player/Model/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/GeneralControllers/GeneralController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserServiceImpl.java" />
+>>>>>>> master
         <option value="$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sports/Config/SpringSecurityConfig.java" />
       </list>
@@ -107,10 +182,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/coursetro-eth/node_modules" />
-    <handled-path value="$PROJECT_DIR$/src/main/resources/SportConfidenceVue/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="47" />
@@ -136,6 +207,11 @@
     <panes>
       <pane id="Scope" />
       <pane id="Scratches" />
+<<<<<<< HEAD
+=======
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+>>>>>>> master
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -177,6 +253,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sports" type="462c0819:PsiDirectoryNode" />
               <item name="Config" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
             </path>
             <path>
               <item name="sportconfidence" type="b2602c69:ProjectViewProjectNode" />
@@ -214,6 +291,8 @@
               <item name="sports" type="462c0819:PsiDirectoryNode" />
               <item name="User" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> master
             </path>
             <path>
               <item name="sportconfidence" type="b2602c69:ProjectViewProjectNode" />
@@ -222,15 +301,23 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sports" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="User" type="462c0819:PsiDirectoryNode" />
               <item name="Service" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="GeneralControllers" type="462c0819:PsiDirectoryNode" />
+>>>>>>> master
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
+=======
+      <pane id="Scope" />
+>>>>>>> master
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -357,6 +444,7 @@
       <created>1527595610941</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1527595610941</updated>
       <workItem from="1527595612634" duration="3155000" />
       <workItem from="1527602135265" duration="7697000" />
@@ -366,14 +454,41 @@
       <workItem from="1527826740119" duration="664000" />
       <workItem from="1527936931783" duration="1191000" />
       <workItem from="1527963428479" duration="665000" />
+=======
+      <updated>1524424676646</updated>
+      <workItem from="1524424691346" duration="12371000" />
+      <workItem from="1524928375537" duration="2462000" />
+      <workItem from="1524947875013" duration="1566000" />
+      <workItem from="1524999813885" duration="848000" />
+      <workItem from="1525009434779" duration="2064000" />
+      <workItem from="1525016848583" duration="2801000" />
+      <workItem from="1525079302578" duration="1309000" />
+      <workItem from="1525090524695" duration="1261000" />
+      <workItem from="1525185714396" duration="1978000" />
+      <workItem from="1525202585515" duration="2638000" />
+      <workItem from="1525285532923" duration="657000" />
+      <workItem from="1525287564457" duration="1259000" />
+      <workItem from="1525424831793" duration="674000" />
+      <workItem from="1525460042983" duration="674000" />
+      <workItem from="1525519523792" duration="833000" />
+      <workItem from="1527534162002" duration="1581000" />
+>>>>>>> master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="21535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="24" width="1857" height="1092" extended-state="6" />
+=======
+    <option name="totallyTimeSpent" value="35236000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="47" y="24" width="1321" height="780" extended-state="6" />
+    <editor active="true" />
+>>>>>>> master
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -391,11 +506,18 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37288135" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20053908" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27272728" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2513704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> master
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -446,6 +568,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Country/Service/CountryService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -455,6 +578,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/League/Service/LeagueService.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/SportClub/Service/SportClubService.java">
+>>>>>>> master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
@@ -463,15 +589,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/GeneralRepos/SportClubRepo.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="198">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+=======
+        <state relative-caret-position="252">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/GeneralRepos/LeagueRepo.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="162">
           <caret line="13" column="55" lean-forward="false" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="55" />
+=======
+        <state relative-caret-position="990">
+          <caret line="55" column="23" lean-forward="false" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
@@ -484,16 +620,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Player/Model/Player.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="666">
           <caret line="37" column="14" lean-forward="false" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+=======
+        <state relative-caret-position="234">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="240">
           <caret line="19" column="67" lean-forward="false" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
           <folding />
+=======
+        <state relative-caret-position="666">
+          <caret line="55" column="23" lean-forward="false" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
@@ -515,17 +661,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Config/SpringSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="457">
           <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
           <folding />
+=======
+        <state relative-caret-position="396">
+          <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Config/SpringSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+=======
+        <state relative-caret-position="666">
+          <caret line="55" column="23" lean-forward="false" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
@@ -539,17 +695,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Config/SimpleCORSFilter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="666">
           <caret line="37" column="88" lean-forward="false" selection-start-line="37" selection-start-column="88" selection-end-line="37" selection-end-column="88" />
           <folding />
+=======
+        <state relative-caret-position="396">
+          <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/GeneralControllers/GeneralController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="360">
           <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="34" />
           <folding />
+=======
+        <state relative-caret-position="990">
+          <caret line="55" column="23" lean-forward="false" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
@@ -563,9 +729,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Repository/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="162">
           <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding />
+=======
+        <state relative-caret-position="666">
+          <caret line="55" column="23" lean-forward="false" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
@@ -595,9 +766,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Config/SimpleCORSFilter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="432">
           <caret line="37" column="88" lean-forward="false" selection-start-line="37" selection-start-column="88" selection-end-line="37" selection-end-column="88" />
           <folding />
+=======
+        <state relative-caret-position="576">
+          <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
@@ -611,9 +787,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1224">
           <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
           <folding />
+=======
+        <state relative-caret-position="702">
+          <caret line="52" column="59" lean-forward="true" selection-start-line="52" selection-start-column="59" selection-end-line="52" selection-end-column="59" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
@@ -643,17 +824,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/GeneralControllers/GeneralController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="576">
           <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="34" />
           <folding />
+=======
+        <state relative-caret-position="864">
+          <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1566">
           <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
           <folding />
+=======
+        <state relative-caret-position="720">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
@@ -704,6 +895,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Country/Entities/Country.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -712,6 +904,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/GeneralRepos/SportClubRepo.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Repository/UserRepository.java">
+>>>>>>> master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
@@ -781,6 +976,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Config/SpringSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1033">
@@ -789,6 +985,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> master
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Country/Service/CountryService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -821,18 +1019,55 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Repository/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Player/Model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" column="14" lean-forward="false" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="67" lean-forward="false" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Controller/UserRestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="53" column="19" lean-forward="false" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="34" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/User/Service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="82" column="42" lean-forward="false" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/GeneralControllers/GeneralController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="34" column="36" lean-forward="true" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sports/Config/SpringSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="53" column="50" lean-forward="false" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
