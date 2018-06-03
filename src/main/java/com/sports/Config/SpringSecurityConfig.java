@@ -41,7 +41,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
 
-<<<<<<< HEAD
                 //Login Requests
 //                .antMatchers("/login").permitAll()
                 .antMatchers("/login/**").permitAll()
@@ -87,7 +86,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers( "/players/**").permitAll()
 
 
-=======
+
                 .antMatchers( "/users").permitAll()
                 .antMatchers( "/users/**").permitAll()
                 .antMatchers( "/players").permitAll()
@@ -103,7 +102,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers(HttpMethod.POST, "/users").hasAuthority("ADMIN")
 //                .antMatchers(HttpMethod.PUT, "/users/**").hasAuthority("ADMIN")
 //                .antMatchers(HttpMethod.DELETE, "/users/**").hasAuthority("ADMIN")
->>>>>>> master
+
                 .anyRequest().authenticated()
                 .and().httpBasic()
                 .authenticationEntryPoint(authEntryPoint);
