@@ -1,0 +1,101 @@
+pragma solidity ^0.4.18;
+contract player {
+  string  name;
+  string  surname;
+  string  weight;
+  bool disabilityState;
+  string  disabilityInformation;
+  string  height;
+  uint  sportClubId;
+  string  contractTimeStart;
+  string  contractTimeEnd;
+
+  function setPlayer(string _name, string _surname , string _weight) public {
+      name=_name;
+      surname=_surname;
+      weight=_weight;
+  }
+  function setPlayer1(string _height,bool _disabilityState,string _disabilityInformation) public {
+      height=_height;
+      disabilityState=_disabilityState;
+      disabilityInformation = _disabilityInformation;
+  }
+  function setPlayer2(uint _sportClubId,string _contractTimeStart,string _contractTimeEnd)public {
+      sportClubId=_sportClubId;
+      contractTimeStart=_contractTimeStart;
+      contractTimeEnd = _contractTimeEnd;
+  }
+  function getPlayerName()public constant returns(string){
+      return (name);
+  }
+  function getPlayerSurname()public constant returns(string) {
+      return (surname);
+  }
+  function getPlayerWeight()public constant returns(string) {
+      return (weight);
+  }
+  function getPlayerDisabilityState()public constant returns(bool) {
+      return (disabilityState);
+  }
+   function getPlayerDisabilityInformation()public constant returns(string) {
+      return (disabilityInformation);
+  }
+  function getPlayerHeight()public constant returns(string) {
+      return (height);
+  }
+   function getPlayerSportClubId()public constant returns(uint) {
+      return (sportClubId);
+  }
+   function getPlayerContractTimeStart()public constant returns(string) {
+      return (contractTimeStart);
+  }
+   function getPlayerContractTimeEnd()public constant returns(string) {
+      return (contractTimeEnd);
+  }
+
+}
+
+contract playerWithParameter {
+struct Player {
+    uint id;
+    bool healthState;
+    string healthInformation;
+}
+//GET PLAYER GİBİ DUSUN indir verileri cekme.
+mapping (uint => Player) public Players;
+uint PlayerCounter;
+//SET PLAYER
+ function dedicatePlayer(bool _healthState,string _healthInformation) public {
+     PlayerCounter++;
+     Players[PlayerCounter] = Player (
+           PlayerCounter,
+           _healthState,
+           _healthInformation
+         );
+ }
+ //PLAYER SAYISI
+ function getNumberOfPlayer() public constant returns (uint) {
+     return PlayerCounter;
+ }
+ //Dizi Indıs verileri aktarma
+ function getPlayerDedicated() public constant returns (uint[]) {
+     if(PlayerCounter==0){
+         return new uint[](0);
+     }
+     uint[] memory PlayerIds = new uint[](PlayerCounter);
+     uint numberOfPlayerDedicated = 0;
+
+     for(uint i=1;i<= PlayerCounter; i++) {
+         PlayerIds[numberOfPlayerDedicated]=Players[i].id;
+         numberOfPlayerDedicated++;
+     }
+
+
+
+     uint[] memory Dedicated = new uint[](numberOfPlayerDedicated);
+     for (uint j = 0; j<numberOfPlayerDedicated;j++){
+         Dedicated[j]=PlayerIds[j];
+     }
+     return (Dedicated);
+ }
+}

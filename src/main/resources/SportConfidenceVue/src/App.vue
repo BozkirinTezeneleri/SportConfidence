@@ -152,8 +152,6 @@
 			</div>
 		</section><!-- footer -->
 
-    <p></p>
-
   </div>
 </template>
 
@@ -176,9 +174,7 @@ export default {
       sessionCounter:0,
 
     }
-
   },
-
 
   methods:{
 

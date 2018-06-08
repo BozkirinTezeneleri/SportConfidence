@@ -86,8 +86,9 @@
                                         <td>{{sportClubPlayer.position}}</td>
                                         <td>{{sportClubPlayer.height}}</td>
                                         <td>{{sportClubPlayer.weight}}</td>
-                                        <td style="color: rgb(32, 178, 170);">{{sportClubPlayer.disabilityState}}</td>
+
                                         <td><button class="btn btn-primary send" @click="getPlayerProfile(sportClubPlayer.playerId)">SHOW PROFILE</button></td>
+
                                     </tr>
 
                                 </tbody>
@@ -99,11 +100,12 @@
 
     <!-- <p v-model="yazi">{{yazi}}</p> -->
     <!-- Players -->
-	  <section id="player_list">
+	  <section id="player_profile">
 
-        <player-profile v-if="selectedClubPlayerId" :selectedPlayer=selectedClubPlayer :headerInfo=headerInfo :session=session></player-profile>
+        <player-profile v-if="selectedClubPlayerId" @closeView="closeProfile" :selectedPlayer=selectedClubPlayer :headerInfo=headerInfo :session=session></player-profile>
 
 	  </section><!-- players -->
+
   </div>	<!-- container -->
 
 </template>
@@ -139,6 +141,14 @@ export default {
   },
 
   methods:{
+
+    closeProfile(value){
+      this.selectedClubPlayerId=value
+    },
+
+    getPlayerBlockInfo(playerId){
+
+    },
 
     getPlayerProfile(playerId){
       this.selectedClubPlayerId=playerId;

@@ -1,1 +1,0 @@
-<input class="form-control ng-not-empty ng-dirty ng-valid-mask ng-valid ng-valid-parse ng-touched" name="mobilePhone" ui-mask="0(999)999-99-99" ui-mask-placeholder="" ui-mask-placeholder-char="_" ng-model="appointment.Contact.MobilePhone" ng-disabled="isContactValidated" placeholder="0(___)___-__-__" aria-invalid="false" style="" type="text">

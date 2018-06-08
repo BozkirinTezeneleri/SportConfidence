@@ -60,10 +60,30 @@
             </div>
 
           </div>
-          <div v-if="session.role==='ADMIN' || session.role==='DOCTOR'" class="col-md-8 col-sm-5">
+          <div v-if="session.role==='ADMIN'" class="col-md-8 col-sm-5">
             <div class= "row text-center wow animated fadeInDown" data-wow-delay= "0.5s">
               <div class= "team-member-contact">
                   <button class="btn btn-info" @click="editPlayerProfile(selectedPlayer.playerId)">EDIT INFORMATION</button>
+                  <button class="btn btn-grey" @click="getPlayerHealthInfo(selectedPlayer.playerId)">SHOW ALL HEALTH INFORMATION</button>
+                  <button class="btn btn-danger" @click="closeProfile()">CLOSE</button>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="session.role==='DOCTOR'" class="col-md-8 col-sm-5">
+            <div class= "row text-center wow animated fadeInDown" data-wow-delay= "0.5s">
+              <div class= "team-member-contact">
+                  <button class="btn btn-info" @click="editPlayerProfile(selectedPlayer.playerId)">EDIT INFORMATION</button>
+                  <button class="btn btn-danger" @click="closeProfile()">CLOSE</button>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="session.role==='MANAGER'" class="col-md-8 col-sm-5">
+            <div class= "row text-center wow animated fadeInDown" data-wow-delay= "0.5s">
+              <div class= "team-member-contact">
+                  <button class="btn btn-info" @click="getPlayerHealthInfo(selectedPlayer.playerId)">SHOW ALL HEALTH INFORMATION</button>
+                  <button class="btn btn-danger" @click="closeProfile()">CLOSE</button>
               </div>
             </div>
           </div>
@@ -76,11 +96,21 @@
     <!-- Edit Players -->
 	  <section v-if="session.role==='ADMIN' || session.role==='DOCTOR'" id="player_list">
 
-        <edit-player v-if="editPlayerId" :editPlayerInfo=editPlayer :headerInfo=headerInfo :session=session></edit-player>
+        <edit-player v-if="editPlayerId" @cancelEdit="closeEdit" :editPlayerInfo=editPlayer :headerInfo=headerInfo :session=session></edit-player>
 
 	  </section><!-- edit-players -->
 
     <hr>
+
+    <section v-if="healthInfo" id="player_healthInfo">
+
+        <center><h5><b><p>{{selectedPlayer.playerId}}-{{selectedPlayer.name}}-{{selectedPlayer.surname}}</p></b></h5></center>
+        <center><b>Total Block Number for Used System </b> <p>{{showBlockNumber}}</p></center>
+        <center><b>MetaMask Account Information </b> <p>{{showAccount}}</p></center>
+        <center><b>BLOCK DATA</b> <p>{{confirmPlayer}}</p></center>
+        <center><button class="btn btn-danger" @click="closeHealthInfo()">CLOSE</button></center>
+
+	  </section><!-- players -->
 
   </div>	<!-- container -->
 
@@ -88,6 +118,90 @@
 </template>
 
 <script>
+////////
+import web3 from 'web3'
+
+let provider = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+provider.eth.defaultAccount = provider.eth.accounts[0];
+let MyContract = provider.eth.contract([
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "Players",
+		"outputs": [
+			{
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"name": "healthState",
+				"type": "bool"
+			},
+			{
+				"name": "healthInformation",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_healthState",
+				"type": "bool"
+			},
+			{
+				"name": "_healthInformation",
+				"type": "string"
+			}
+		],
+		"name": "dedicatePlayer",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPlayerDedicated",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getNumberOfPlayer",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]);
+let contract = MyContract.at('0xde5adcada4f4a5979b1b7269b52b575566abcfc0');
+let balance = provider.eth.getBalance(provider.eth.defaultAccount);
+
+//////////////
 
 export default {
   name: 'PlayerProfile',
@@ -102,13 +216,45 @@ export default {
 
   data(){
     return{
+      ////////////0xf997a045fd4b526e1fe8ade56aa4ade1068aa8ac
+      msg: ' ',
+      word: '',
+      confirmPlayer: '',
+
+      balance: null,
+      blockMsg: ' ',
+      gasPrice: null,
+      /////////////
       editPlayer:{},
       editPlayerId:null,
-      headerInfoAuth:this.headerInfo
+      headerInfoAuth:this.headerInfo,
+
+      healthInfo:null
     }
   },
   methods:{
 
+    closeEdit(value){
+        this.editPlayerId=value
+    },
+
+    closeHealthInfo(){
+
+      this.healthInfo=null
+    },
+
+    closeProfile(){
+        this.$emit('closeView',null)
+    },
+    //BLOCKCHAIN method
+    getPlayerHealthInfo(playerId){
+
+      this.healthInfo=true
+
+      this.confirmPlayer=(contract.Players(playerId))
+
+    },
+    //////////////////////
     editPlayerProfile(PlayerId){
       this.editPlayerId=PlayerId;
 
@@ -128,11 +274,23 @@ export default {
       ).then(function (resp) {
         this.editPlayer=resp.data;
 
+
       });
 
     },
 
    },
+
+   ////////////////////
+   computed:{
+       showAccount: function() {
+         return this.msg + provider.eth.defaultAccount
+       },
+       showBlockNumber: function () {
+         return this.blockMsg + provider.eth.blockNumber
+       }
+     },
+   ////////////////
 
 }
 </script>

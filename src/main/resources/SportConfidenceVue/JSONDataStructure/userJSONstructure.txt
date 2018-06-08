@@ -1,0 +1,21 @@
+[
+	{
+		"userId": 1,
+		"username": "user",
+		"name": "userName",
+		"surname": "userSurname",
+		"password": "$2a$10$Jc96onSQvDCnL6gDgI96feMBMIq/QA4a0at3YVrPOj2EHykCo4ziu",
+		"email": "user@gmail.com",
+		"phone": "05554442233",
+		"role": "ADMIN",
+		"authorities": [
+			{
+				"authority": "ADMIN"
+			}
+		],
+		"accountNonLocked": true,
+		"accountNonExpired": true,
+		"credentialsNonExpired": true,
+		"enabled": true
+	}
+]

@@ -151,9 +151,7 @@
 				</div>
 			</div>
 		</section><!-- footer -->
-
-    <p></p>
-
+    
   </div>
 </template>
 

@@ -74,6 +74,7 @@
                 <hr>
 
                 <button class="btn btn-primary send" type="submit">UPDATE INFORMATIONS</button>
+                <button class="btn btn-danger send" style="margin-left:5px;" @click="cancelEdit()">CANCEL</button>
               </div>
 
             </form>
@@ -135,6 +136,11 @@ export default {
   },
 
   methods:{
+
+    cancelEdit(){
+
+        this.$emit('cancelEdit',null)
+    },
 
     updateUser(userId){
 

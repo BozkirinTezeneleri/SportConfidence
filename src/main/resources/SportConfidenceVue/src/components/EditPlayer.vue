@@ -251,6 +251,7 @@
                 <hr>
 
                 <button v-if="session.role!='MANAGER'" class="btn btn-primary send" type="submit">UPDATE INFORMATIONS</button>
+                <button class="btn btn-danger send" style="margin-left:5px;" @click="cancelEdit()">CANCEL</button>
               </div>
 
             </form>
@@ -267,12 +268,242 @@
         <strong>Succesful Update!</strong> {{editInfo}}
     </div>
 
+    <div v-if="blockInfo" class= "row text-center main_content animated zoomInDown">
+      <h2>BLOCK STRUCTURE</h2>
+      <hr>
+
+      <p><b>MetaMask Account Information :</b> {{ showAccount }} </p>
+
+
+      <p><b>Name/Surname :</b> {{ confirmName }} {{ confirmSurname }}</p>
+      <p><b>Weight :</b>  {{ confirmWeight }}</p>
+      <p><b>Height :</b>  {{ confirmHeight }}</p>
+      <p><b>Disability :</b>  {{ confirmDisabilityState }}</p>
+      <p><b>Description :</b> {{ confirmDisabilityInformation }} </p>
+      <p><b>SportClub ID :</b>  {{ confirmSportClub }}</p>
+      <p><b>Contract Time Start :</b>  {{ confirmContractTimeStart }}</p>
+      <p><b>Contract Time End :</b>  {{ confirmContractTimeEnd }}</p>
+      <hr>
+      <p><b>Balance :</b> {{ balance }}</p>
+      <hr>
+      <p><b>Total Block Number for Used System :</b> {{ showBlockNumber }}</p>
+      <hr>
+      <center>
+          <button class="btn btn-danger" type="button" @click="closeBlock()">CLOSE </button>
+      </center>
+
+    </div>
+
   </div>	<!-- container -->
 
 
 </template>
 
 <script>
+
+////////
+import web3 from 'web3'
+
+let provider = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+provider.eth.defaultAccount = provider.eth.accounts[0];
+let MyContract = provider.eth.contract([
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPlayerWeight",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"name": "_surname",
+				"type": "string"
+			},
+			{
+				"name": "_weight",
+				"type": "string"
+			}
+		],
+		"name": "setPlayer",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPlayerDisabilityState",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPlayerHeight",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPlayerContractTimeStart",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPlayerSportClubId",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPlayerName",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPlayerSurname",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_sportClubId",
+				"type": "uint256"
+			},
+			{
+				"name": "_contractTimeStart",
+				"type": "string"
+			},
+			{
+				"name": "_contractTimeEnd",
+				"type": "string"
+			}
+		],
+		"name": "setPlayer2",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPlayerDisabilityInformation",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPlayerContractTimeEnd",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_height",
+				"type": "string"
+			},
+			{
+				"name": "_disabilityState",
+				"type": "bool"
+			},
+			{
+				"name": "_disabilityInformation",
+				"type": "string"
+			}
+		],
+		"name": "setPlayer1",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]);
+let contract = MyContract.at('0x75bc47282c37510065a9d615911d59c5545a9103');
+let balance = provider.eth.getBalance(provider.eth.defaultAccount);
+
+//////////////
 
 export default {
   name: 'EditPlayer',
@@ -287,6 +518,25 @@ export default {
 
   data(){
     return{
+
+      ////////////0xf997a045fd4b526e1fe8ade56aa4ade1068aa8ac
+      msg: ' ',
+      word: '',
+      confirmName: '',
+      confirmSurname:'',
+      confirmBirthdate:'',
+      confirmHeight:'',
+      confirmWeight:'',
+      confirmSportClub:'',
+      confirmContractTimeStart:'',
+      confirmContractTimeEnd:'',
+      confirmDisabilityState:'',
+      confirmDisabilityInformation:'',
+      confirmTestimonial:'',
+      balance: null,
+      blockMsg: ' ',
+
+      /////////////
       editPlayer:{
         name: null,
         surname: null,
@@ -332,7 +582,9 @@ export default {
       sportclubs:{},
       selectedSportClubId:null,
 
-      headerInfoAuth:this.headerInfo
+      headerInfoAuth:this.headerInfo,
+
+      blockInfo:null,
     }
   },
 
@@ -344,6 +596,79 @@ export default {
   },
 
   methods:{
+
+    closeBlock(){
+      this.blockInfo=null
+    },
+
+    ////////////////
+    getBalance() {
+    this.balance = Number(balance)
+    },
+
+    storeData() {
+      contract.setPlayer(this.editPlayer.name,this.editPlayer.surname,this.editPlayer.weight)
+      this.storeData2()
+      this.storeData3()
+    },
+    storeData2(){
+      contract.setPlayer1(this.editPlayer.height,this.editPlayer.disabilityState,this.editPlayer.disabilityInformation)
+    },
+    storeData3(){
+      contract.setPlayer2(this.editPlayer.sportClub.sportClubId,this.editPlayer.contractTimeStart,this.editPlayer.contractTimeEnd)
+    },
+    getData() {
+      this.confirmName = (contract.getPlayerName())
+      this.getDataSurname()
+    //  this.getDataBirthdate()
+      this.getDataHeight()
+      this.getDataWeight()
+      this.getDataSportClub()
+      this.getDataContractTimeStart()
+      this.getDataContractTimeEnd()
+      this.getDataDisabilityState()   // hatalı
+      this.getDataDisabilityInformation()
+  //    this.getDataTestimonial()
+    },
+    getDataSurname(){
+      this.confirmSurname=(contract.getPlayerSurname())
+    }, /*
+    getDataBirthdate(){
+      this.confirmBirthdate=(contract.getPlayerBirthdate())
+    },*/
+    getDataHeight(){
+      this.confirmHeight=(contract.getPlayerHeight())
+    },
+    getDataWeight(){
+      this.confirmWeight=(contract.getPlayerWeight())
+    },
+    getDataSportClub(){
+      this.confirmSportClub=(contract.getPlayerSportClubId())
+    },
+    getDataContractTimeStart(){
+      this.confirmContractTimeStart=(contract.getPlayerContractTimeStart())
+    },
+    getDataContractTimeEnd(){
+      this.confirmContractTimeEnd=(contract.getPlayerContractTimeEnd())
+    },
+    getDataDisabilityState(){
+      this.confirmDisabilityState=(contract.getPlayerDisabilityState())
+    },
+    getDataDisabilityInformation(){
+      this.confirmDisabilityInformation=(contract.getPlayerDisabilityInformation())
+    }, /*
+    getDataTestimonial(){
+      this.confirmTestimonial=(contract.getPlayerTestimonial())
+    },
+*/
+
+    //////////////
+
+
+    cancelEdit(){
+
+        this.$emit('cancelEdit', null)
+    },
 
     updatePlayer(playerId){
 
@@ -401,6 +726,9 @@ export default {
              this.editPlayer.testimonial=null
              this.editPlayer.height=null
              this.editInfo='...Succesful Update Operation for This Player...'
+             setTimeout(()=>{
+               this.editInfo=null
+             },3000)
 
          }
        },function(error){
@@ -408,6 +736,13 @@ export default {
        })
          .catch((err)=>console.error(err))
       //////////// END-VueResource-PUT ////////////////////
+
+      /////BLOCKCHAIN setData
+       this.storeData()
+       this.getData()
+       this.getBalance()
+       this.blockInfo=true
+      //--////////////-----------------------------------
     },
 
     getCountries(){
@@ -483,9 +818,16 @@ export default {
     }
   },
 
-
-
-
+  ////////////////////
+  computed:{
+      showAccount: function() {
+        return this.msg + provider.eth.defaultAccount
+      },
+      showBlockNumber: function () {
+        return this.blockMsg + provider.eth.blockNumber
+      }
+    },
+  ////////////////
 
 }
 </script>

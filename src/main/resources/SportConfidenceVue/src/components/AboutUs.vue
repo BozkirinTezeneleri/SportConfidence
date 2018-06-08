@@ -46,7 +46,7 @@
 
       <div class="col-md-4 wow animated zoomIn" data-wow-delay="0.1s">
         <figure>
-          <img class="pro img-responsive center-block" src="src/assets/img/karisik.png" style="height:150px;">
+          <img class="pro img-responsive center-block" src="src/assets/img/karisik.png" style="height:150px; width:800px;">
         </figure>
         <h5 class="text-center">Ethereum&Solidity Development</h5>
         <div class="row">

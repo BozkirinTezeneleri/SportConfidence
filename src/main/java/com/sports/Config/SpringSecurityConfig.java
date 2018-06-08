@@ -81,7 +81,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-
+//
 //                .antMatchers( "/users").permitAll()
 //                .antMatchers( "/users/**").permitAll()
 //                .antMatchers( "/players").permitAll()
@@ -93,7 +93,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers( "/sportclubs").permitAll()
 //                .antMatchers( "/sportclubs/**").permitAll()
 //                .antMatchers("/login").permitAll()
-
+//
 //                .antMatchers(HttpMethod.POST, "/users").hasAuthority("ADMIN")
 //                .antMatchers(HttpMethod.PUT, "/users/**").hasAuthority("ADMIN")
 //                .antMatchers(HttpMethod.DELETE, "/users/**").hasAuthority("ADMIN")

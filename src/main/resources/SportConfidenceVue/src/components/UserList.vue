@@ -41,7 +41,7 @@
 
         </div> <!-- row main_content -->
 
-        <user-profile v-if="selectedUserId" :selectedUser=selectedUser :headerInfo=headerInfo :session=session></user-profile>
+        <user-profile v-if="selectedUserId" @closeView="closeProfile" :selectedUser=selectedUser :headerInfo=headerInfo :session=session></user-profile>
 
 
   </div>	<!-- container -->
@@ -73,6 +73,11 @@ export default {
     }
   },
   methods:{
+
+    closeProfile(value){
+
+        this.selectedUserId=value
+    },
 
     getUserProfile(userId){
       this.selectedUserId=userId;
@@ -142,7 +147,7 @@ export default {
         this.deleteInfo="DELETE";
         setTimeout(() => {
             this.deleteInfo=null
-            //console.log("aaa")
+
         },2000);
       });
 
@@ -154,7 +159,7 @@ export default {
 
     setInterval(() => {
         this.getUser();
-        //console.log("aaa")
+
     },3000);
 
   },

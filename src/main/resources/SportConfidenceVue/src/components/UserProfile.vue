@@ -53,6 +53,14 @@
             <div class= "row text-center wow animated fadeInDown" data-wow-delay= "0.5s">
               <div class= "team-member-contact">
                   <button class="btn btn-info" @click="editUserProfile(selectedUser.userId)">EDIT INFORMATION</button>
+                  <button class="btn btn-danger" @click="closeProfile()">CLOSE</button>
+              </div>
+            </div>
+          </div>
+          <div v-if="session.role!='ADMIN'" class="col-md-5 col-sm-5" style="margin-top:40px;">
+            <div class= "row text-center wow animated fadeInDown" data-wow-delay= "0.5s">
+              <div class= "team-member-contact">
+                  <button class="btn btn-danger" @click="closeProfile()">CLOSE</button>
               </div>
             </div>
           </div>
@@ -67,7 +75,7 @@
     <!-- Edit Users -->
 	  <section id="user_list">
 
-        <edit-user v-if="editUserId" :editUserInfo=editUser :headerInfo=headerInfo :session=session></edit-user>
+        <edit-user v-if="editUserId" @cancelEdit="closeEdit" :editUserInfo=editUser :headerInfo=headerInfo :session=session></edit-user>
 
 	  </section><!-- edit-users -->
 
@@ -98,6 +106,15 @@ export default {
     }
   },
   methods:{
+
+    closeEdit(value){
+        this.editUserId=value
+    },
+
+    closeProfile(){
+
+        this.$emit('closeView',null)
+    },
 
     editUserProfile(UserId){
       this.editUserId=UserId;
